@@ -2,12 +2,12 @@ import requests
 import json
 import sys
 
-URL = "http://study-bible.herokuapp.com/bible-api/query_verse/?version=nasb"
+URL = "http://study-bible.herokuapp.com/bible-api/bible/model/nasb.json"
 
 
 def get_data():
     source = requests.get(URL).json()
-    return source.get("result")
+    return source
 
 
 # Test in small file
@@ -15,7 +15,7 @@ def get_data():
 #     with open("C:\WORKING_FOLDER\jude.json") as f:
 #         source = json.load(f)
 
-#     return source.get("result")
+#     return source
 
 def sort_data_by_key(data, key=None):
     if key == None:
@@ -34,7 +34,7 @@ def write_data_to_file(data, filename):
 
 
 if __name__ == "__main__":
-    data = sort_data_by_key(get_data(), "id")
+    data = sort_data_by_key(get_data(), "pk")
 
     if len(sys.argv) == 2:
         write_data_to_file(data, sys.argv[1])
