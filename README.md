@@ -1,16 +1,38 @@
-# Bible Lover
+## Bible Lover
 
 A Bible-based website with lots of features
 
-# Setup
+## Documentation link for useful tools
 
-> **Note:** The $PROJECT_DIRECTORY is the folder where `README.md` file is located.
+* [Python](https://docs.python.org/3.8/tutorial/introduction.html)
+* [Django](https://docs.djangoproject.com/en/3.0/intro/overview)
+* [Git](https://git-scm.com/docs)
+* [Theme (CSS/JS) library](https://preview.webpixels.io/quick-website-ui-kit/docs)
 
-## Requirement
 
-* Python >= v3
+## Setup
 
-You need to setup a virtual environment first. Make sure you are running python version >= 3. run the following command to check 
+> **Note:** The `$PROJECT_DIRECTORY` is the folder where `manage.py` file is located.
+
+### Requirement
+
+#### Required
+
+* Python (version >= 3.0)
+* Text editor -> e.g. Visual Studio Code, Atom, Sublime text
+* Database -> e.g. sqlite, postgres or mysql
+* Git
+
+
+#### Optional
+
+* db browser for sqlite -> Provides a UI to view database structure and data directly
+
+
+### Python version check
+
+You need to setup a virtual environment first. Make sure you are running python version >= 3. Navigate to the `$PROJECT_DIRECTORY` and run the following command to check.
+
 
 ```
 python --version
@@ -22,7 +44,7 @@ if the result is python version 2, then use this command
 python3 --version
 ```
 
-## Setting up a virtual environment
+### Setting up a virtual environment
 
 if the result above is python version >= 3.0, then run the following command to set up a virtual environment
 
@@ -34,9 +56,9 @@ python3 -m venv env
 >
 > Once setup, you don't need to run the above command everytime unless you are re-initiating the virtual environment
 
-## Activating virtual environment
+### Activating virtual environment
 
-> **Note:** This has to be done everytime you are working on the project so that every developer will have a consistent environment. Navigate to the $PROJECT_DIRECTORY
+> **Note:** This has to be done everytime you are working on the project so that every developer will have a consistent environment. Navigate to the `$PROJECT_DIRECTORY`
 
 For windows OS, run
 
@@ -51,6 +73,64 @@ source env/bin/activate
 ```
 
 
-# Contributions
+### Setting up django
 
-Fork the project and create a pull request
+After activating the virtual environment, install all the necessary modules by running.
+
+```
+pip install -r requirements.txt
+```
+
+You may need to update your version of pip by running
+```python -m pip install --upgrade pip
+```
+
+> **Note:** You only need to run this once unless there is an update to the `requirements.txt` file
+
+
+## Running the project
+
+Everytime a new model is created, run
+
+```
+python manage.py makemigrations
+```
+
+and make the change apply to the database by running
+
+```
+python manage.py migrate
+```
+
+### Loading test data into database
+
+Usually when creating a new database, to save time and populate test data into database, run the following command
+
+
+```
+python manage.py loaddata testdata/seeds.json
+```
+
+### Viewing site
+
+To view the site, make sure the server is running. If server is down or not running, run the following command to get the server up and running
+
+```
+python manage.py runserver
+```
+
+then navigate to http://localhost:7000
+
+
+
+## Contributions
+
+Fork the project and create a pull request.
+
+> **Note:** Everytime you are about to continue working on a project, first run in the command line to update your repository.
+
+```
+git pull
+```
+
+> **Note:** Evertime you are working on a new ticket, always create a new branch and this would usually be from the `develop` branch.
