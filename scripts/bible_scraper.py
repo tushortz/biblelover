@@ -10,13 +10,6 @@ def get_data():
     return source
 
 
-# Test in small file
-# def get_data():
-#     with open("C:\WORKING_FOLDER\jude.json") as f:
-#         source = json.load(f)
-
-#     return source
-
 def sort_data_by_key(data, key=None):
     if key == None:
         return data
