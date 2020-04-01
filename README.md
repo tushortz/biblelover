@@ -73,7 +73,7 @@ source env/bin/activate
 ```
 
 
-### Setting up django
+#### Setting up django
 
 After activating the virtual environment, install all the necessary modules by running.
 
@@ -87,8 +87,34 @@ You may need to update your version of pip by running
 
 > **Note:** You only need to run this once unless there is an update to the `requirements.txt` file
 
+### Setting up a SECRET KEY
 
-## Running the project
+To set up a secret key, you need to add the key as an environment variable. This needs to be done only once.
+
+#### For linux
+
+open the `~/.bashrc` file and enter the following to the bottom of the file
+
+```
+export SECRET_KEY="<my_secret_key>"
+```
+
+save the file and exit. Update the changes into the terminal by running the following code in your current working terminal otherwise restart the terminal
+
+```
+source `~/.bashrc
+```
+
+#### For windows
+
+Search `environment variables` and add a new entry to the `system environment variables`
+
+* Environment Name: `SECRET_KEY`
+* Environment Name: `<secret_key_value>`
+
+After this, save and restart your terminal
+
+### Running the project
 
 Everytime a new model is created, run
 
@@ -119,7 +145,7 @@ To view the site, make sure the server is running. If server is down or not runn
 python manage.py runserver
 ```
 
-then navigate to http://localhost:7000
+then navigate to http://localhost:8000
 
 
 
