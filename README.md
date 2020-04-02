@@ -18,13 +18,13 @@ A Bible-based website with lots of features
 
 > **Note:** The new branch must not include spaces. The format is as follows
 >
-> * BL (short for project name i.e. Bible Lover) followed by a dash (-)
+> * BIL (short for project name i.e. Bible Lover) followed by a dash (-)
 > * Issue number e.g. 11 followed by a forward slash (/)
 > * Short text describing the feature to be added
 >
 > So an example is:
 > 
-> **BL-15/create-user-model**
+> **BIL-15/create-user-model**
 
 3. After the fix add your files from the terminal or editor console and pass a commit message with `git commit -am "my message"`. then do a `git push -u origin <branch name>`
 
