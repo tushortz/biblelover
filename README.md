@@ -9,6 +9,27 @@ A Bible-based website with lots of features
 * [Git](https://git-scm.com/docs)
 * [Theme (CSS/JS) library](https://preview.webpixels.io/quick-website-ui-kit/docs)
 
+## Working on a new issue
+
+1. Select an issue and assign it to yourself on [github issues](https://github.com/tushortz/biblelover/issues).
+
+
+2. Make sure you are on the develop branch, do a `git pull` to update your branch. then `git checkout -b <new branch name>` to create and switch the new branch.
+
+> **Note:** The new branch must not include spaces. The format is as follows
+>
+> * BL (short for project name i.e. Bible Lover) followed by a dash (-)
+> * Issue number e.g. 11 followed by a forward slash (/)
+> * Short text describing the feature to be added
+>
+> So an example is:
+> 
+> **BL-15/create-user-model**
+
+3. After the fix add your files from the terminal or editor console and pass a commit message with `git commit -am "my message"`. then do a `git push -u origin <branch name>`
+
+4. Once commit has been pushed, go back to github and **create a pull request** linking it to the `develop` branch.
+
 
 ## Setup
 
