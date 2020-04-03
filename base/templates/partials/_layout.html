@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "partials/_head.html" %}
+
+<body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Cookies -->
+  {% include "partials/_cookies.html" %}
+
+  <!-- Navbar -->
+  {% include "partials/_navbar.html" %}
+  
+  <!-- Main content -->
+  {% block body %}{% endblock body %}
+
+</body>
+
+{% include "partials/_footer.html" %}
+{% include "partials/_script.html" %}
+
+</html>

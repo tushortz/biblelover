@@ -1,0 +1,19 @@
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Webpixels">
+  <title>{% block title %}{% endblock title %}Bible Lover</title>
+  <!-- Preloader -->
+
+  <script>
+    window.addEventListener("load", function () {
+      setTimeout(function () {
+        document.querySelector('body').classList.add('loaded');
+      }, 300);
+    });
+  </script>
+  {% include "partials/_stylesheet.html" %}
+
+</head>
