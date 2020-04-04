@@ -15,6 +15,5 @@ class Bible(models.Model):
                                 default=Testament.OLD)
 
     def __str__(self):
-        return "{book} {chapter}:{verse}".format_map(self.book, self.chapter, self.verse)
-
+        return "{} {}:{}".format(self.book, self.chapter, self.verse)
 
