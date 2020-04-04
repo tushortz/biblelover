@@ -1,4 +1,6 @@
-## Bible Lover
+## Bible Lover 
+
+[![CircleCI](https://circleci.com/gh/tushortz/biblelover.svg?style=svg&circle-token=fc6ca2a798e43258243ecb0be4ef398fa576d08e)](https://github.com/tushortz/biblelover/pulls)
 
 A Bible-based website with lots of features
 
