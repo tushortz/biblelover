@@ -17,3 +17,5 @@ class Bible(models.Model):
     def __str__(self):
         return "{} {}:{}".format(self.book, self.chapter, self.verse)
 
+    class Meta:
+        ordering = ['id']
