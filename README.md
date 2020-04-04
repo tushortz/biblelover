@@ -131,7 +131,7 @@ source `~/.bashrc
 Search `environment variables` and add a new entry to the `system environment variables`
 
 * Environment Name: `SECRET_KEY`
-* Environment Name: `<secret_key_value>`
+* Environment Value: `<secret_key_value>`
 
 After this, save and restart your terminal
 
