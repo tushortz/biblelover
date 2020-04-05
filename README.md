@@ -121,7 +121,6 @@ open the `~/.bashrc` file and enter the following to the bottom of the file
 
 ```
 export SECRET_KEY="<my_secret_key>"
-export HOST="LOCAL"
 ```
 
 save the file and exit. Update the changes into the terminal by running the following code in your current working terminal otherwise restart the terminal
@@ -136,11 +135,6 @@ Search `environment variables` and add a new entry to the `system environment va
 
 * Environment Name: `SECRET_KEY`
 * Environment Value: `<secret_key_value>`
-
-and
-
-* Environment Name: `HOST`
-* Environment Value: `LOCAL`
 
 After this, save and restart your terminal
 

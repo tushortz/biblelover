@@ -90,9 +90,9 @@ WSGI_APPLICATION = 'biblelover.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-HOST = get_env_variable("HOST")
+HOST = get_env_variable("HOST", "")
 
-if HOST == "HEROKU":
+if HOST:
     DEBUG = False
 
     DATABASES = {}
