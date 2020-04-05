@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'background_task',
     'base',
     'bible',
 ]
@@ -104,6 +105,9 @@ else:  # default sqlite
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'biblelover.db'),
+            'OPTIONS': {
+                'timeout': 20,
+            }
         }
     }
 
