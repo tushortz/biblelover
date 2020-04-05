@@ -8,6 +8,7 @@ addons:
 
 before_install:
   - export DJ_DEBUG=False
+  - export HOST=TRAVIS_CI
   - export DABATASE_URL=postgres://postgres@localhost/travisdb
 
 install:
