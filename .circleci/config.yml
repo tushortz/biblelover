@@ -10,19 +10,19 @@ jobs:
           DB_HOST: 127.0.0.1
     steps:
       - checkout
-      - restore_cache:
-          key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+      # - restore_cache:
+      #     key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
       - run:
           command: |
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
         environment:
-          DATABASE_URL: "postgres://ubuntu@localhost:5432/db_name"
-      - save_cache:
-          key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
-          paths:
-            - "venv"
+          DATABASE_URL: "postgres://ubuntu@127.0.0.1:5432/db_name"
+      # - save_cache:
+      #     key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+      #     paths:
+      #       - "venv"
       - run:
           name: Running tests
           command: |
