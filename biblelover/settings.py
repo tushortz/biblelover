@@ -15,8 +15,8 @@ from django.core.exceptions import ImproperlyConfigured
 import dj_database_url
 
 def get_env_variable(var_name, default=None):
-    if default != None:
-        return default
+    if default == None:
+        return var_name
 
     """Get environment variable by name."""
     try:
@@ -33,7 +33,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# SECURITY WARNING: keep the secret key used in production secret! 
 SECRET_KEY = get_env_variable('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'background_task',
     'base',
     'bible',
 ]
@@ -89,9 +90,9 @@ WSGI_APPLICATION = 'biblelover.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-HOST = get_env_variable("HOST", "")
+ENV = get_env_variable("ENV")
 
-if HOST == "HEROKU":
+if ENV == "production":
     DEBUG = False
 
     DATABASES = {}
@@ -104,6 +105,9 @@ else:  # default sqlite
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'biblelover.db'),
+            'OPTIONS': {
+                'timeout': 20,
+            }
         }
     }
 

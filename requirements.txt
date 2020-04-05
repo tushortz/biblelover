@@ -4,3 +4,4 @@ psycopg2-binary==2.8.4
 virtualenv==20.0.15
 django-toolbelt==0.0.1
 requests==2.23.0
+django-background-tasks==1.2.5
