@@ -19,3 +19,15 @@ class Bible(models.Model):
 
     class Meta:
         ordering = ['id']
+        verbose_name_plural = "Bible"
+
+
+class VerseOfTheDay(models.Model):
+    verse = models.ForeignKey(Bible, null=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return "{} - {}".format(str(self.verse), self.verse.text)
+
+    class Meta:
+        ordering = ['id']
+        verbose_name_plural = "Verse of the day"

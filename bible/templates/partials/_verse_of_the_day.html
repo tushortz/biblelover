@@ -1,0 +1,37 @@
+{% load static %}
+
+{% if verse_of_the_day %}
+<section class="slice slice-sm">
+  <div class="container position-relative">
+    <div class="card shadow-lg border-0 zindex-100">
+      <div class="card-body px-5 py-5 text-center text-md-left">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h4 class="h5 mb-2">{{ verse_of_the_day.verse.text }}</h4>
+            <p class="mb-0">{{ verse_of_the_day.verse }}</p>
+          </div>
+          <div class="col-12 col-md-4 mt-4 mt-md-0 text-md-right"><a href="#"
+              class="btn btn-warning btn-icon rounded-pill"><span class="btn-inner--icon">
+                <i data-feather="eye"></i>
+              </span><span class="btn-inner--text">Read {{ verse_of_the_day.verse.book }} {{ verse_of_the_day.verse.chapter }}</span></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="w-10 position-absolute bottom-n3 left-n5"><svg xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 361.1 384.8"
+        style="enable-background:new 0 0 361.1 384.8;" xml:space="preserve"
+        class="injected-svg svg-inject fill-primary">
+        <path
+          d="M53.1,266.7C19.3,178-41,79.1,41.6,50.1S287.7-59.6,293.8,77.5c6.1,137.1,137.8,238,15.6,288.9 S86.8,355.4,53.1,266.7z">
+        </path>
+      </svg></div>
+    <div class="w-10 position-absolute top-n5 right-n5"><svg xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 361.1 384.8"
+        style="enable-background:new 0 0 361.1 384.8;" xml:space="preserve" class="injected-svg svg-inject fill-dark">
+        <path
+          d="M53.1,266.7C19.3,178-41,79.1,41.6,50.1S287.7-59.6,293.8,77.5c6.1,137.1,137.8,238,15.6,288.9 S86.8,355.4,53.1,266.7z">
+        </path>
+      </svg></div>
+  </div>
+</section>
+{% endif %}

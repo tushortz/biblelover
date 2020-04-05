@@ -1,12 +1,12 @@
 from django.contrib import admin
-from bible.models import Bible
+from bible.models import Bible, VerseOfTheDay
 
 
 @admin.register(Bible)
 class BibleAdmin(admin.ModelAdmin):
     list_display = ['__str__', 'text']
     readonly_fields = ['book', 'chapter', 'verse', 'text', 'category']
-    search_fields = ['text']
+    search_fields = ['text', 'book', 'chapter']
     list_filter = ['category', 'book']
 
     def has_add_permission(self, request):
@@ -17,3 +17,8 @@ class BibleAdmin(admin.ModelAdmin):
 
     def has_change_permission(self, request, obj=None):
         return False
+
+@admin.register(VerseOfTheDay)
+class VerseOfTheDayAdmin(admin.ModelAdmin):
+    autocomplete_fields = ['verse']
+    raw_id_fields = ['verse']
