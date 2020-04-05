@@ -4,7 +4,7 @@ python:
   - 3.8
 
 addons:
-  - postgresql: "9.5"
+  - postgresql: "10.7"
 
 before_install:
   - export DJ_DEBUG=False
@@ -15,7 +15,6 @@ install:
 
 before_script:
   - psql -c "CREATE DATABASE travisdb;" -U postgres
-  - python manage.py makemigrations
   - python manage.py migrate --noinput
 
 env:
