@@ -19,7 +19,6 @@ jobs:
       - run: 
           name: Running migrations
           command: |
-            . venv/bin/activate
             python3 manage.py migrate    
       - run:
           name: Running tests
