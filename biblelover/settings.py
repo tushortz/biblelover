@@ -90,9 +90,9 @@ WSGI_APPLICATION = 'biblelover.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-HOST = get_env_variable("HOST")
+ENV = get_env_variable("ENV")
 
-if HOST:
+if ENV == "production":
     DEBUG = False
 
     DATABASES = {}
