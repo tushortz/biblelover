@@ -16,10 +16,13 @@ install:
 
 before_script:
   - psql -c "CREATE DATABASE travisdb;" -U postgres
+  - python3 -m venv env
+  - env/bin/activate 
   - python manage.py migrate
 
 env:
   - DJANGO_VERSION=3.0.5
+  - ENV=CI
 
 script: python manage.py test --keepdb
 
