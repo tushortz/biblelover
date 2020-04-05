@@ -32,8 +32,9 @@ jobs:
       - run:
           name: Runnning tests
           command: |
+            echo $pwd
             . env/bin/activate
-            py.test -vv tests
+            python3 manage.py test
 
 workflows:
   version: 2
