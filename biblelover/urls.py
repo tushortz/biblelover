@@ -11,5 +11,5 @@ urlpatterns = [
             {'document_root': settings.STATIC_ROOT}),
 ]
 
-if not settings.HOST:
+if settings.ENV != "CI":
     delete_last_verse_of_the_day(verbose_name="Delete last verse of the day", repeat=300)
