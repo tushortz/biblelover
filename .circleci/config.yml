@@ -12,10 +12,10 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
-      - save_cache:
-          key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
-          paths:
-            - "venv"
+      # - save_cache:
+      #     key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+      #     paths:
+      #       - "venv"
       - run: echo "testing something"
       - run:
           name: Running tests
