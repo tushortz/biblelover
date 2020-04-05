@@ -1,11 +1,11 @@
 version: 2
 jobs:
   build:
-docker:
-  - image: circleci/python:3.8
-  - image: mdillon/postgis:9.6
-    environment:
-      POSTGRES_USER: circleci
+    docker:
+      - image: circleci/python:3.6.1
+      - image: mdillon/postgis:9.6
+        environment:
+          POSTGRES_USER: circleci
     steps:
       - checkout
       - restore_cache:
