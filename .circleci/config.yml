@@ -16,7 +16,7 @@ jobs:
       #     key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
       #     paths:
       #       - "venv"
-      - run: echo "testing something"
+      - run: python3 manage.py migrate
       - run:
           name: Running tests
           command: |
