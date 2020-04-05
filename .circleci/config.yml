@@ -12,14 +12,11 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
+            python3 manage.py migrate    
       - save_cache:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
           paths:
             - "venv"
-      - run: 
-          name: Running migrations
-          command: |
-            python3 manage.py migrate    
       - run:
           name: Running tests
           command: |
