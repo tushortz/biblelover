@@ -8,5 +8,3 @@ app_name = "base"
 urlpatterns = [
     path("", view=base_view.index, name="index")
 ]
-
-delete_last_verse_of_the_day(verbose_name="Delete last verse of the day", repeat=300)
