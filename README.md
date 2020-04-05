@@ -1,6 +1,7 @@
 # Bible Lover 
 
 [![CircleCI](https://circleci.com/gh/tushortz/biblelover.svg?style=svg&circle-token=fc6ca2a798e43258243ecb0be4ef398fa576d08e)](https://github.com/tushortz/biblelover/pulls)
+[![TravisCI](https://travis-ci.com/tushortz/biblelover.svg?token=GLxxf9QizXqE5NPMrkih&branch=develop)](https://github.com/tushortz/biblelover/pulls)
 
 A Bible-based website with lots of features
 
@@ -120,6 +121,7 @@ open the `~/.bashrc` file and enter the following to the bottom of the file
 
 ```
 export SECRET_KEY="<my_secret_key>"
+export HOST="LOCAL"
 ```
 
 save the file and exit. Update the changes into the terminal by running the following code in your current working terminal otherwise restart the terminal
@@ -134,6 +136,11 @@ Search `environment variables` and add a new entry to the `system environment va
 
 * Environment Name: `SECRET_KEY`
 * Environment Value: `<secret_key_value>`
+
+and
+
+* Environment Name: `HOST`
+* Environment Value: `LOCAL`
 
 After this, save and restart your terminal
 

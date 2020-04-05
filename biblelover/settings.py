@@ -15,7 +15,7 @@ from django.core.exceptions import ImproperlyConfigured
 import dj_database_url
 
 def get_env_variable(var_name, default=None):
-    if default != None:
+    if default:
         return default
 
     """Get environment variable by name."""
@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'biblelover.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-HOST = get_env_variable("HOST", "")
+HOST = get_env_variable("HOST")
 
 if HOST == "HEROKU":
     DEBUG = False
