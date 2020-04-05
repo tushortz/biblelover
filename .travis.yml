@@ -1,0 +1,30 @@
+language: python
+
+python:
+  - 3.8
+
+addons:
+  - postgresql: "9.5"
+
+before_install:
+  - export DJ_DEBUG=False
+  - export DABATASE_URL=postgres://postgres@localhost/travisdb
+
+install:
+  - pip install -r requirements.txt
+
+before_script:
+  - psql -c "CREATE DATABASE travisdb;" -U postgres
+  - python manage.py makemigrations
+  - python manage.py migrate --noinput
+
+env:
+  - DJANGO_VERSION=3.0.8
+  - ENV=CI
+
+script: python manage.py test --keepdb
+
+# notifications:
+#   slack:
+#     on_success: always
+#     rooms: literaturereview-team:LIVUrdszYvuZsTJW8IL1yVLS
