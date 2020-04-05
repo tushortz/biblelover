@@ -7,6 +7,7 @@ jobs:
       - checkout
       - restore_cache:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
+      - run: sudo apt install -y postgresql-client || true
       - run:
           command: |
             python3 -m venv venv
