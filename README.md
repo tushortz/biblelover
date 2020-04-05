@@ -1,7 +1,5 @@
 # Bible Lover 
 
-[![TravisCI](https://travis-ci.com/tushortz/biblelover.svg?token=GLxxf9QizXqE5NPMrkih&branch=develop)](https://github.com/tushortz/pulls)
-
 A Bible-based website with lots of features
 
 ## Documentation link for useful tools
