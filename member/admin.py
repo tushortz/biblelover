@@ -10,6 +10,7 @@ class CountryAdmin(admin.ModelAdmin):
     list_display = ['name', 'code']
     search_fields = ['name']
 
+
 @admin.register(Member)
 class MemberAdmin(BaseUserAdmin):
     # The forms to add and change user instances
@@ -25,7 +26,7 @@ class MemberAdmin(BaseUserAdmin):
     fieldsets = (
         ['Authentication', {'fields': ['email', 'password']}],
         ['Personal info', {'fields': ['first_name', 'last_name', 'country']}],
-        ['Permissions', {'fields': ['is_active',]}],
+        ['Permissions', {'fields': ['is_active', ]}],
         [None, {'fields': ['last_login']}]
     )
     # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
