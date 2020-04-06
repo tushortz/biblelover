@@ -28,9 +28,12 @@ class Member(AbstractBaseUser):
         max_length=50,
         unique=True,
     )
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
     country = models.ForeignKey(
         'Country', on_delete=models.SET_NULL, null=True)
+    date_joined = models.DateTimeField(auto_now_add=True)
+    last_login = models.DateTimeField(null=True)
+
     objects = MemberManager()
 
     USERNAME_FIELD = 'email'
