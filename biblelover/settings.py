@@ -14,6 +14,7 @@ import os
 from django.core.exceptions import ImproperlyConfigured
 import dj_database_url
 
+
 def get_env_variable(var_name, default=None):
     if default == None:
         return var_name
@@ -33,7 +34,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret! 
+# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_env_variable('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -97,7 +98,8 @@ if ENV == "production":
     DEBUG = False
 
     DATABASES = {}
-    DATABASES['default'] = dj_database_url.parse(get_env_variable('DATABASE_URL'), conn_max_age=600)
+    DATABASES['default'] = dj_database_url.parse(
+        get_env_variable('DATABASE_URL'), conn_max_age=600)
 
 else:  # default sqlite
     DEBUG = True
