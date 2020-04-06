@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'background_task',
     'base',
     'bible',
+    'member',
 ]
 
 MIDDLEWARE = [
