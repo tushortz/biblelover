@@ -20,6 +20,15 @@ jobs:
         key: ${{ runner.os }}-gems-${{ hashFiles('Gemfile') }} # change your gemfile path
         restore-keys: |
           ${{ runner.os }}-gems-
+
+    - name: Setup Python
+      uses: actions/setup-python@v1
+      with:
+        python-version: "3.8"
+
+    - name: Install project dependencies
+      run: pip install pylint
+
     - uses: MeilCli/danger-action@v4
       with:
         plugins_file: 'Gemfile'
