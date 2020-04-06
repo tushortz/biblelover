@@ -34,8 +34,8 @@ end
 # Just to let people know
 warn("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]"
 
-if github.pr_body.length < 5
-    fail "Please provide a summary in the Pull Request description"
+if github.pr_title.length < 15
+    fail "Please provide a descriptive summary in the Pull Request description"
   end
   
 # Ensure a clean commits history
