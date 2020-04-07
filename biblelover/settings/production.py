@@ -5,6 +5,7 @@ DEBUG = False
 
 SECRET_KEY = get_env_variable('SECRET_KEY')
 
+DATABASES = {}
 DATABASES['default'] = dj_database_url.parse(
     get_env_variable('DATABASE_URL'), conn_max_age=600)
 
