@@ -5,7 +5,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('base.urls', namespace='base')),
+    path('', include('base.urls', namespace='home')),
     re_path('assets/(?P<path>.*)$', serve,
             {'document_root': settings.STATIC_ROOT}),
 ]

@@ -12,14 +12,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from django.core.exceptions import ImproperlyConfigured
-import dj_database_url
 
 
-def get_env_variable(var_name, default=None):
-    if default == None:
-        return var_name
-
-    """Get environment variable by name."""
+def get_env_variable(var_name):
     try:
         return os.environ[var_name]
     except KeyError:
@@ -30,18 +25,7 @@ def get_env_variable(var_name, default=None):
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_env_variable('SECRET_KEY')
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
@@ -66,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
 ]
 
 ROOT_URLCONF = 'biblelover.urls'
@@ -73,7 +58,7 @@ ROOT_URLCONF = 'biblelover.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,33 +72,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'biblelover.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-ENV = get_env_variable("ENV")
-
-if ENV == "production":
-    DEBUG = False
-
-    DATABASES = {}
-    DATABASES['default'] = dj_database_url.parse(
-        get_env_variable('DATABASE_URL'), conn_max_age=600)
-
-else:  # default sqlite
-    DEBUG = True
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'biblelover.db'),
-            'OPTIONS': {
-                'timeout': 20,
-            }
-        }
-    }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -133,6 +91,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+DATABASES = {}
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
@@ -147,6 +106,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOGIN_REDIRECT_URL = "/"
+
+PAGINATE_COUNT = 50
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
