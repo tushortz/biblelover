@@ -1,6 +1,6 @@
 # Bible Lover 
 
-![test](https://github.com/tushortz/biblelover/workflows/Django%20deploy/badge.svg?branch=develop)
+![test](![test](https://github.com/tushortz/biblelover/workflows/test/badge.svg))
 ![danger](![danger](https://github.com/tushortz/biblelover/workflows/danger/badge.svg))
 
 A Bible-based website with lots of features
