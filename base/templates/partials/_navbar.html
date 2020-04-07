@@ -22,18 +22,19 @@
               <i data-feather="x"></i>
             </button>
           </div>
+
           <!-- Main navigation -->
           <ul class="navbar-nav ml-lg-auto">
-            <!-- Overview -->
+            <!-- Dashboard -->
             <li class="nav-item nav-item-spaced d-none d-lg-block">
               <a class="nav-link" href="../../overview.html">
-                Overview
+                Dashboard
               </a>
             </li>
-            <!-- Landings menu -->
+            <!-- Bible -->
             <li class="nav-item nav-item-spaced dropdown dropdown-animate" data-toggle="hover">
               <a class="nav-link" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
-                Landings
+                Bible
               </a>
               <div class="dropdown-menu dropdown-menu-xl p-0">
                 <div class="row no-gutters">
@@ -259,7 +260,7 @@
             <!-- Pages menu -->
             <li class="nav-item nav-item-spaced dropdown dropdown-animate" data-toggle="hover">
               <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">Pages</a>
+                aria-expanded="false">Activities</a>
               <div class="dropdown-menu dropdown-menu-md p-0">
                 <ul class="list-group list-group-flush px-lg-4">
                   <li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
@@ -479,218 +480,6 @@
                     </ul>
                   </li>
                 </ul>
-              </div>
-            </li>
-            <!-- App menu -->
-            <li class="nav-item nav-item-spaced dropdown dropdown-animate" data-toggle="hover">
-              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">App</a>
-              <div class="dropdown-menu dropdown-menu-md p-0">
-                <ul class="list-group list-group-flush px-lg-4">
-                  <li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
-                    <a href="#" class="list-group-item list-group-item-action dropdown-toggle" role="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <div class="media d-flex">
-                        <!-- SVG icon -->
-                        <figure style="width: 20px;">
-                          <img alt="Image placeholder" src="{% static 'img/svg/icons/Secure_Files.svg' %}"
-                            class="svg-inject img-fluid" style="height: 20px;">
-                        </figure>
-                        <!-- Media body -->
-                        <div class="media-body ml-2">
-                          <h6 class="heading mb-0">Authentication</h6>
-                          <p class="mb-0">Examples for any scenario.</p>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="dropdown-menu"><a class="dropdown-item"
-                        href="../../pages/authentication/login-basic.html">
-                        Login Basic
-                      </a>
-                      <a class="dropdown-item" href="../../pages/authentication/login-side-cover.html">
-                        Login Side Cover
-                      </a>
-                      <a class="dropdown-item" href="../../pages/authentication/login-overlay.html">
-                        Login Overlay
-                      </a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="../../pages/authentication/register-basic.html">
-                        Register Basic
-                      </a>
-                      <a class="dropdown-item" href="../../pages/authentication/register-side-cover.html">
-                        Register Side Cover
-                      </a>
-                      <a class="dropdown-item" href="../../pages/authentication/register-overlay.html">
-                        Register Overlay
-                      </a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="../../pages/authentication/recover-basic.html">
-                        Recover Basic
-                      </a>
-                      <a class="dropdown-item" href="../../pages/authentication/recover-side-cover.html">
-                        Recover Side Cover
-                      </a>
-                      <a class="dropdown-item" href="../../pages/authentication/recover-overlay.html">
-                        Recover Overlay
-                      </a>
-                    </div>
-                  </li>
-                  <li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
-                    <a href="#" class="list-group-item list-group-item-action dropdown-toggle" role="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <div class="media d-flex">
-                        <!-- SVG icon -->
-                        <figure style="width: 20px;">
-                          <img alt="Image placeholder" src="{% static 'img/svg/icons/Task.svg' %}"
-                            class="svg-inject img-fluid" style="height: 20px;">
-                        </figure>
-                        <!-- Media body -->
-                        <div class="media-body ml-2">
-                          <h6 class="heading mb-0">Account</h6>
-                          <p class="mb-0">Account management made cool.</p>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="dropdown-menu"><a class="dropdown-item" href="../../pages/account/profile.html">
-                        Profile
-                      </a>
-                      <a class="dropdown-item" href="../../pages/account/settings.html">
-                        Settings
-                      </a>
-                      <a class="dropdown-item" href="../../pages/account/billing.html">
-                        Billing
-                      </a>
-                      <a class="dropdown-item" href="../../pages/account/cards.html">
-                        Cards
-                      </a>
-                      <a class="dropdown-item" href="../../pages/account/security.html">
-                        Security
-                      </a>
-                      <a class="dropdown-item" href="../../pages/account/users.html">
-                        Users
-                      </a>
-                      <a class="dropdown-item" href="../../pages/account/notifications.html">
-                        Notifications
-                      </a>
-                    </div>
-                  </li>
-                  <li class="dropdown dropdown-animate dropdown-submenu" data-toggle="hover">
-                    <a href="#" class="list-group-item list-group-item-action dropdown-toggle" role="button"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <div class="media d-flex">
-                        <!-- SVG icon -->
-                        <figure style="width: 20px;">
-                          <img alt="Image placeholder" src="{% static 'img/svg/icons/Task.svg' %}"
-                            class="svg-inject img-fluid" style="height: 20px;">
-                        </figure>
-                        <!-- Media body -->
-                        <div class="media-body ml-2">
-                          <h6 class="heading mb-0">Boards</h6>
-                          <p class="mb-0">Account management made cool.</p>
-                        </div>
-                      </div>
-                    </a>
-                    <div class="dropdown-menu"><a class="dropdown-item" href="../../pages/boards/overview.html">
-                        Overview
-                      </a>
-                      <a class="dropdown-item" href="../../pages/boards/projects.html">
-                        Projects
-                      </a>
-                      <a class="dropdown-item" href="../../pages/boards/tasks.html">
-                        Tasks
-                      </a>
-                      <a class="dropdown-item" href="../../pages/boards/integrations.html">
-                        Integrations
-                      </a>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-none d-lg-block py-3 bg-transparent">
-                      <div class="row">
-                        <div class="col-sm-6">
-                          <a href="../../pages/boards/overview.html" class="dropdown-item">Dashboard</a>
-                          <a href="../../pages/boards/projects.html" class="dropdown-item">Projects</a>
-                          <a href="../../pages/boards/tasks.html" class="dropdown-item">Tasks</a>
-                          <a href="../../pages/boards/integrations.html" class="dropdown-item">Integrations</a>
-                        </div>
-                        <div class="col-sm-6">
-                          <a href="../../pages/account/settings.html" class="dropdown-item">Settings</a>
-                          <a href="../../pages/account/billing.html" class="dropdown-item">Billing</a>
-                          <a href="../../pages/account/cards.html" class="dropdown-item">Cards</a>
-                          <a href="../../pages/account/users.html" class="dropdown-item">Users</a>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <!-- Docs menu -->
-            <li class="nav-item nav-item-spaced dropdown dropdown-animate" data-toggle="hover">
-              <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">Docs</a>
-              <div class="dropdown-menu dropdown-menu-md p-0">
-                <div class="list-group list-group-flush px-lg-4">
-                  <a href="../../docs/index.html" class="list-group-item list-group-item-action" role="button">
-                    <div class="d-flex">
-                      <!-- SVG icon -->
-                      <span class="h6">
-                        <i data-feather="book"></i>
-                      </span>
-                      <!-- Media body -->
-                      <div class="ml-3">
-                        <h6 class="heading mb-0">Documentation</h6>
-                        <small class="text-sm">Quick setup and build tools</small>
-                      </div>
-                    </div>
-                  </a>
-                  <div class="py-3">
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <a href="../../docs/getting-started/quick-start.html" class="dropdown-item">Quick Start</a>
-                        <a href="../../docs/getting-started/build-tools.html" class="dropdown-item">Build Tools</a>
-                        <a href="../../docs/getting-started/customization.html" class="dropdown-item">Customization</a>
-                        <a href="../../docs/getting-started/file-structure.html" class="dropdown-item">File
-                          Structure</a>
-                        <a href="../../docs/components/alerts.html" class="dropdown-item">Components</a>
-                      </div>
-                      <div class="col-sm-6">
-                        <a href="../../docs/styleguide/icons.html" class="dropdown-item">Icons</a>
-                        <a href="../../docs/styleguide/svg-icons.html" class="dropdown-item">SVG
-                          Icons</a>
-                        <a href="../../docs/styleguide/illustrations.html" class="dropdown-item">Illustrations</a>
-                        <a href="../../docs/plugins/animate.html" class="dropdown-item">Plugins</a>
-                      </div>
-                    </div>
-                  </div>
-                  <a href="../../docs/components/alerts.html" class="list-group-item list-group-item-action"
-                    role="button">
-                    <div class="d-flex">
-                      <!-- SVG icon -->
-                      <span class="h6">
-                        <i data-feather="code"></i>
-                      </span>
-                      <!-- Media body -->
-                      <div class="ml-3">
-                        <h6 class="heading mb-0">Components</h6>
-                        <small class="text-sm">Component examples and more</small>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="../../docs/changelog.html" class="list-group-item list-group-item-action" role="button">
-                    <div class="d-flex">
-                      <!-- SVG icon -->
-                      <span class="h6">
-                        <i data-feather="file-text"></i>
-                      </span>
-                      <!-- Media body -->
-                      <div class="ml-3">
-                        <h6 class="heading mb-0">Changelog</h6>
-                        <small class="text-sm">Component examples and more</small>
-                      </div>
-                    </div>
-                  </a>
-                </div>
               </div>
             </li>
           </ul>
