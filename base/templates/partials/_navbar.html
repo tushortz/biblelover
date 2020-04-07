@@ -5,8 +5,8 @@
     <nav class="navbar navbar-main navbar-expand-lg navbar-light" id="navbar-main">
       <div class="container">
         <!-- Brand -->
-        <a class="navbar-brand" href="../../index.html">
-          <img alt="Image placeholder" src="{% static 'img/brand/dark.svg' %}" id="navbar-logo">
+        <a class="navbar-brand" href="{% url 'home:index' %}">
+          <img alt="Bible Lover Logo" style="height:7.5rem" src="{% static 'img/brand/logo.png' %}" id="navbar-logo">
         </a>
         <!-- Toggler -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse"
