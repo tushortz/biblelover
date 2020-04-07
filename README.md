@@ -3,7 +3,7 @@
 ![test](![test](https://github.com/tushortz/biblelover/workflows/test/badge.svg))
 ![danger](![danger](https://github.com/tushortz/biblelover/workflows/danger/badge.svg))
 
-A Bible-based website with lots of features
+A Bible-based website with lots of features hosted at https://biblelover.herokuapp.com
 
 ## Documentation link for useful tools
 
