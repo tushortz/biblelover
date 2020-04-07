@@ -48,5 +48,6 @@ jobs:
         
       env:
         SECRET_KEY: "testkey"
-        ENV: "production"
+        ADMIN_EMAIL_ADDRESS: "admin@test.com"
+        ADMIN_FULL_NAME: "Admin Test"
         DATABASE_URL: "postgres://postgres:@localhost:5432/biblelover_test" 

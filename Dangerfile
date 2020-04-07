@@ -34,8 +34,8 @@ end
 # Just to let people know
 warn("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]"
 
-if github.pr_title.length < 15
-    fail "Please provide a descriptive summary in the Pull Request description"
+if github.pr_title.length < 5
+    fail "Please provide a descriptive title in the Pull Request"
   end
   
 # Ensure a clean commits history
@@ -43,4 +43,4 @@ if git.commits.any? { |c| c.message =~ /^Merge branch '#{github.branch_for_base}
   fail('Please rebase to get rid of the merge commits in this PR')
 end
 
-code_style_validation.check validator: 'pylint', file_extensions: ['.py']
+code_style_validation.check validator: 'pylint', file_extensions: ['.py'], ignore_file_patterns: ['**/migrations/*.py']
