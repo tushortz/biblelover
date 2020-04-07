@@ -14,3 +14,7 @@ admin_emails = [[get_env_variable("ADMIN_FULL_NAME"), get_env_variable("ADMIN_EM
 ADMINS = admin_emails
 
 MANAGERS = admin_emails
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'biblelover/assets')
+]
