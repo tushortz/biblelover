@@ -1,5 +1,5 @@
-from biblelover.settings.base import *
 import os
+from biblelover.settings.base import *
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 

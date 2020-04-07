@@ -1,5 +1,5 @@
-from biblelover.settings.base import *
 import dj_database_url
+from biblelover.settings.base import *
 
 DEBUG = False
 
@@ -9,11 +9,12 @@ DATABASES = {}
 DATABASES['default'] = dj_database_url.parse(
     get_env_variable('DATABASE_URL'), conn_max_age=600)
 
-admin_emails = [[get_env_variable("ADMIN_FULL_NAME"), get_env_variable("ADMIN_EMAIL_ADDRESS")]]
+ADMIN_EMAILS = [
+    [get_env_variable("ADMIN_FULL_NAME"), get_env_variable("ADMIN_EMAIL_ADDRESS")]]
 
-ADMINS = admin_emails
+ADMINS = ADMIN_EMAILS
 
-MANAGERS = admin_emails
+MANAGERS = ADMIN_EMAILS
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
