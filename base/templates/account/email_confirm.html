@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "partials/_head.html" %}
+
+<title>Confirm E-mail address :: Bible Lover</title>
+
+{% block body %}
+
+<body>
+
+  <section>
+    <div class="container d-flex align-items-center text-center text-lg-left py-5 py-lg-6 border-bottom">
+      <div class="col px-0">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+
+            {% if confirmation %}
+
+            <h2 class="h1 mb-2">Confirm E-mail address</h2>
+
+            <h6 class="font-weight-light text-muted">Thanks for registering. Please confirm that <a
+                class="text-underline--dashed"
+                href="mailto:{{ confirmation.email_address.email }}">{{ confirmation.email_address.email }}</a> is the
+              email for user <span class="text-underline--dashed">{{ confirmation.email_address.user }}</span> </h6>
+
+            <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+              {% csrf_token %}
+              <button class="btn btn-success my-2 ml-0 ml-sm-3" type="submit">Confirm</button>
+            </form>
+
+            {% else %}
+
+            <h6 class="font-weight-light alert alert-outline-danger">This e-mail confirmation link expired or is
+              invalid. Please <a class="text-underline--dashed" href="{% url 'account_email' %}">issue a new e-mail
+                confirmation
+                request</a>.</a></span> </h6>
+
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {% endif %}
+
+
+  <section>
+    <div class="container d-flex align-items-center text-center text-lg-left py-5 py-lg-6 border-bottom">
+      <div class="col px-0">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+
+            <a href="{% url 'account_email' %}" class="btn btn-soft-dark btn-icon my-2"><span
+                class="btn-inner--icon fa fa-inbox"> </span><span class="btn-inner--text">Change E-mail</span> </a>
+
+
+            <a href="{% url 'account_logout' %}" class="btn btn-warning my-2 ml-0 ml-sm-3"><span
+                class="btn-inner--icon fa fa-sign-out-alt"></span>
+              <span class="btn-inner--text">Sign out</span></a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+{% endblock body %}
+
+{% include "partials/_footer.html" %}
+
+{% include "partials/_script.html" %}
+
+</html>
