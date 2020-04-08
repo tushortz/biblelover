@@ -15,6 +15,7 @@ A Bible-based website with lots of features hosted at https://biblelover.herokua
 * [Django](https://docs.djangoproject.com/en/3.0/intro/overview)
 * [Git](https://git-scm.com/docs)
 * [Theme (CSS/JS) library](https://preview.webpixels.io/quick-website-ui-kit/docs)
+* [All-Auth for Django](https://django-allauth.readthedocs.io/en/latest)
 
 ## Working on a new issue
 
