@@ -10,7 +10,7 @@ SECRET_KEY = "g%*g5pj-exx+4ad9092*st_@fttv!rl37m(m@32p622bg3h8p+"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'biblelover.db'),
+        'NAME': os.path.join(os.path.dirname(BASE_DIR), 'biblelover.db'),
         'OPTIONS': {
             'timeout': 20,
         }
