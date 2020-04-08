@@ -4,6 +4,7 @@ from django.views.static import serve
 from django.conf import settings
 
 urlpatterns = [
+    path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('', include('base.urls', namespace='home')),
     re_path('assets/(?P<path>.*)$', serve,
