@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from bible.helpers import verse_of_the_day_helper
 
-@login_required
 def index(request):
 
     context = {
@@ -17,9 +16,3 @@ def dashboard(request):
     }
 
     return render(request, "base/dashboard.html", context)
-
-# def signup(request):
-#     if request.method == "POST":
-#         print("Hi")
-
-#     return redirect(reverse("home:index"))

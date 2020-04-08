@@ -487,17 +487,27 @@
           <ul class="navbar-nav align-items-lg-center d-none d-lg-flex ml-lg-auto">
             <!-- Auth -->
             <li class="nav-item">
-              <a class="nav-link" href="../../pages/authentication/login-basic.html">
-                Sign in
-              </a>
+              {% if not request.user.is_authenticated %}
+              <a class="nav-link" href="{% url 'account_login' %}">Sign in</a>
+              {% else %}
+
+              <a href="{% url 'account_logout' %}"
+              class="btn btn-sm btn-soft-danger btn-icon ml-3">
+              <span class="btn-inner--icon"><i data-feather="log-out"></i></span>
+              <span class="btn-inner--text">Log out</span>
+            </a>
+              {% endif %}
             </li>
+
+            {% if not request.user.is_authenticated %}
             <li class="nav-item">
               <a href="https://themes.getbootstrap.com/product/quick-website-ui-kit-2/"
-                class="btn btn-sm btn-primary btn-icon ml-3" target="_blank">
+                class="btn btn-sm btn-primary btn-icon ml-3">
                 <span class="btn-inner--icon"><i data-feather="user-plus"></i></span>
                 <span class="btn-inner--text">Register</span>
               </a>
             </li>
+            {% endif %}
           </ul>
           <!-- Mobile button -->
           <div class="d-lg-none px-4 text-center">
