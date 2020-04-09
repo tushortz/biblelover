@@ -150,7 +150,7 @@
 
           {% if not request.user.is_authenticated %}
           <li class="nav-item">
-            <a href="https://themes.getbootstrap.com/product/quick-website-ui-kit-2/"
+            <a href="{% url 'account_signup' %}"
               class="btn btn-sm btn-primary btn-icon ml-3">
               <span class="btn-inner--icon"><i data-feather="user-plus"></i></span>
               <span class="btn-inner--text">Register</span>

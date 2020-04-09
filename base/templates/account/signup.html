@@ -78,16 +78,16 @@
                       <div class=mb-2><a href=# class="small text-muted text-underline--dashed border-primary"
                           data-toggle=password-text data-target=#input-password>Show password</a></div>
                     </div>
-                    <div class="input-group input-group-merge"><input type=password name="password2" aria-required="true" required="true" class="form-control form-control-prepend" id=input-password placeholder=********>
+                    <div class="input-group input-group-merge"><input type=password name="password2" aria-required="true" required="true" class="form-control form-control-prepend" id=input-password2 placeholder=********>
                       <div class=input-group-prepend><span class=input-group-text><i data-feather=key></i></span></div>
                     </div>
                   </div>
                   <div class=my-4>
                     <div class="custom-control custom-checkbox mb-3"><input type=checkbox class=custom-control-input
                         id=check-terms> <label class=custom-control-label for=check-terms aria-required="true" required="true">I agree to the <a
-                          href=../../pages/utility/terms.html>terms and conditions</a></label></div>
+                          href={% url 'base:terms' %}>terms and conditions</a></label></div>
                   </div>
-                  <div class=mt-4><input type=submit class="btn btn-block btn-primary" value="Create my account"></div>
+                  <div class=mt-4><input type=submit class="btn btn-block btn-primary" value="Create my account" id="signup-btn" disabled></div>
                 </form>
  
                 <div class=mt-4><small>Already have an acocunt?</small> <a href={% url 'account_login' %}
