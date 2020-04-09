@@ -6,3 +6,4 @@ django-toolbelt==0.0.1
 requests==2.23.0
 django-background-tasks==1.2.5
 django-allauth==0.41.0
+coverage==5.0.4
