@@ -134,3 +134,6 @@ __MACOSX/
 
 # editor generated files
 .vscode/
+
+# ignore admin staticfiles
+admin/
