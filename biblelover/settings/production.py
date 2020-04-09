@@ -19,3 +19,7 @@ MANAGERS = ADMIN_EMAILS
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'assets')
+]
