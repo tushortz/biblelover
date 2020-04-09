@@ -30,16 +30,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'background_task',
-    'django.contrib.sites',  # new
+    'django.contrib.sites', 
 
     # Local
     'base',
     'bible',
 
     # 3rd party
-    'allauth',  # new
-    'allauth.account',  # new
-    'allauth.socialaccount',  # new
+    'debug_toolbar',
+    'allauth', 
+    'allauth.account', 
+    'allauth.socialaccount', 
     'allauth.socialaccount.providers.github',
 
 
@@ -55,6 +56,7 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
