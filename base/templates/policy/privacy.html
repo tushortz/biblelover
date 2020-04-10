@@ -54,8 +54,8 @@
                     <h6>Your privacy is citically important to us.</h6>
                     <p>It is Bible Lover's policy to respect your privacy regarding any information we may collect while
                         operating our website. This Privacy Policy applies to <a
-                            href="http://biblelover.herokuapp.com/">biblelover.herokuapp.com/</a> (hereinafter, "us",
-                        "we", or "biblelover.herokuapp.com/"). We respect your privacy and are committed to protecting
+                            href="{% url 'base:index' %}">Bible Lover</a> (hereinafter, "us",
+                        "we", or "{{ request.get_host }}"). We respect your privacy and are committed to protecting
                         personally identifiable information you may provide us through the Website. We have adopted this
                         privacy policy ("Privacy Policy") to explain what information may be collected on our Website,
                         how we use this information, and under what circumstances we may disclose the information to
@@ -75,7 +75,7 @@
                         website.</p>
                     <p>Bible Lover also collects potentially personally-identifying information like Internet Protocol
                         (IP) addresses for logged in users and for users leaving comments on
-                        http://biblelover.herokuapp.com/ blog posts. Bible Lover only discloses logged in user and
+                        {{ request.get_host }} blog posts. Bible Lover only discloses logged in user and
                         commenter IP addresses under the same circumstances that it uses and discloses
                         personally-identifying information as described below.</p>
 
@@ -83,7 +83,7 @@
                     <p>Certain visitors to Bible Lover's websites choose to interact with Bible Lover in ways that
                         require Bible Lover to gather personally-identifying information. The amount and type of
                         information that Bible Lover gathers depends on the nature of the interaction. For example, we
-                        ask visitors who sign up at http://biblelover.herokuapp.com/ to provide a username
+                        ask visitors who sign up at {{ request.get_host }} to provide a username
                         and email address.</p>
 
                     <h5 id=security-section>Security</h5>
@@ -119,7 +119,7 @@
                     <p>A cookie is a string of information that a website stores on a visitor's computer, and that the
                         visitor's browser provides to the website each time the visitor returns. Bible Lover uses
                         cookies to help Bible Lover identify and track visitors, their usage of
-                        http://biblelover.herokuapp.com/, and their website access preferences. Bible Lover visitors who
+                        {{ request.get_host }}, and their website access preferences. Bible Lover visitors who
                         do not wish to have cookies placed on their computers should set their browsers to refuse
                         cookies before using Bible Lover's websites, with the drawback that certain features of Bible
                         Lover's websites may not function properly without the aid of cookies.</p>
