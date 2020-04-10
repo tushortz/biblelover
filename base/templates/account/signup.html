@@ -10,12 +10,17 @@
 {% block body %}
 
 <body>
-  
+
 
   </div><a href="{% url 'home:index' %}"
     class="btn btn-white btn-icon-only rounded-circle position-absolute zindex-101 left-4 top-4 d-none d-lg-inline-flex"
-    data-toggle=tooltip data-placement=right title="Go back"><span class=btn-inner--icon><i
-        data-feather=arrow-left></i></span></a>
+    data-toggle="tooltip" data-placement="right" title="Go back"><span class="btn-inner--icon"><svg
+        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="feather feather-arrow-left">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg></span></a>
   <section>
     <div
       class="bg-primary position-absolute h-100 top-0 left-0 zindex-100 col-lg-6 col-xl-6 zindex-100 d-none d-lg-flex flex-column justify-content-end"
@@ -44,59 +49,83 @@
                   {% if form.errors %}
                   <div class="alert alert-outline-danger" role="alert">
                     {% for field in form %}
-                      {% for error in field.errors %}
-                        <strong>{{ field.label }}: {{ error|escape }}</strong><br>
-                      {% endfor %}
+                    {% for error in field.errors %}
+                    <strong>{{ field.label }}: {{ error|escape }}</strong><br>
+                    {% endfor %}
                     {% endfor %}
 
                     {% for error in form.non_field_errors %}
-                      <strong>{{ field.label }}: {{ error|escape }}</strong><br>
+                    <strong>{{ field.label }}: {{ error|escape }}</strong><br>
                     {% endfor %}
                   </div>
                   {% endif %}
 
 
                   <div class=form-group><label class=form-control-label>Email address</label>
-                    <div class="input-group input-group-merge"><input type=email name="email" aria-required="true" required="true" {% if form.email.value %} value="{{ form.email.value }}" {% endif %}
+                    <div class="input-group input-group-merge"><input type=email name="email" aria-required="true"
+                        required="true" {% if form.email.value %} value="{{ form.email.value }}" {% endif %}
                         class="form-control form-control-prepend" id=input-email placeholder=name@example.com>
-                      <div class=input-group-prepend><span class=input-group-text><i data-feather=at-sign></i></span>
-                      </div>
+                      <div class="input-group-prepend"><span class="input-group-text"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-user">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                          </svg></span></div>
                     </div>
                   </div>
-                  <div class="form-group mb-4">
-                    <div class="d-flex align-items-center justify-content-between">
-                      <div><label class=form-control-label>Password</label></div>
-                    </div>
-                    <div class="input-group input-group-merge"><input type=password name="password1" aria-required="true" required="true" class="form-control form-control-prepend" id=input-password placeholder=********>
-                      <div class=input-group-prepend><span class=input-group-text><i data-feather=key></i></span></div>
-                    </div>
-                  </div>
-
-                  <div class="form-group mb-4">
-                    <div class="d-flex align-items-center justify-content-between">
-                      <div><label class=form-control-label>Password (again)</label></div>
-                      <div class=mb-2><a href=# class="small text-muted text-underline--dashed border-primary"
-                          data-toggle=password-text data-target=#input-password>Show password</a></div>
-                    </div>
-                    <div class="input-group input-group-merge"><input type=password name="password2" aria-required="true" required="true" class="form-control form-control-prepend" id=input-password2 placeholder=********>
-                      <div class=input-group-prepend><span class=input-group-text><i data-feather=key></i></span></div>
-                    </div>
-                  </div>
-                  <div class=my-4>
-                    <div class="custom-control custom-checkbox mb-3"><input type=checkbox class=custom-control-input
-                        id=check-terms> <label class=custom-control-label for=check-terms aria-required="true" required="true">I agree to the <a
-                          href={% url 'base:terms' %}>terms and conditions</a></label></div>
-                  </div>
-                  <div class=mt-4><input type=submit class="btn btn-block btn-primary" value="Create my account" id="signup-btn" disabled></div>
-                </form>
- 
-                <div class=mt-4><small>Already have an acocunt?</small> <a href={% url 'account_login' %}
-                    class="small font-weight-bold">Sign in</a></div>
               </div>
+              <div class="form-group mb-4">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div><label class=form-control-label>Password</label></div>
+                </div>
+                <div class="input-group input-group-merge"><input type=password name="password1" aria-required="true"
+                    required="true" class="form-control form-control-prepend" id=input-password placeholder=********>
+                  <div class="input-group-prepend"><span class="input-group-text"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-key">
+                        <path
+                          d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4">
+                        </path>
+                      </svg></span></div>
+                </div>
+              </div>
+
+              <div class="form-group mb-4">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div><label class=form-control-label>Password (again)</label></div>
+                  <div class=mb-2><a href=# class="small text-muted text-underline--dashed border-primary"
+                      data-toggle=password-text data-target=#input-password>Show password</a></div>
+                </div>
+                <div class="input-group input-group-merge"><input type=password name="password2" aria-required="true"
+                    required="true" class="form-control form-control-prepend" id=input-password2 placeholder=********>
+                  <div class="input-group-prepend"><span class="input-group-text"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-key">
+                        <path
+                          d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4">
+                        </path>
+                      </svg></span></div>
+                </div>
+              </div>
+              <div class=my-4>
+                <div class="custom-control custom-checkbox mb-3"><input type=checkbox class=custom-control-input
+                    id=check-terms> <label class=custom-control-label for=check-terms aria-required="true"
+                    required="true">I agree to the <a href={% url 'base:terms' %}>terms and conditions</a></label></div>
+              </div>
+              <div class=mt-4><input type=submit class="btn btn-block btn-primary" value="Create my account"
+                  id="signup-btn" disabled></div>
+              </form>
+
+              <div class=mt-4><small>Already have an acocunt?</small> <a href={% url 'account_login' %}
+                  class="small font-weight-bold">Sign in</a></div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </section>
 
