@@ -27,7 +27,7 @@
               email for user <span class="text-underline--dashed">{{ confirmation.email_address.user }}</span> </h6>
 
             <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
-              {% csrf_token %}
+              {% include 'partials/_form_errors.html' %}
               <button class="btn btn-success my-2 ml-0 ml-sm-3" type="submit">Confirm</button>
             </form>
 
