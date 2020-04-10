@@ -1,5 +1,5 @@
 import dj_database_url
-from biblelover.settings.base import *
+from biblelover.settings._base import *
 import os
 
 DEBUG = False
