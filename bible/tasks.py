@@ -1,11 +1,11 @@
 from background_task import background
+from background_task.models import Task
 from bible.models import VerseOfTheDay
-from datetime import datetime
+from django.utils import timezone
 
-DAILY = 60 * 60 * 24
+midnight = timezone.now().replace(hour=23, minute=59, second=59)
 
-
-@background(schedule=DAILY)
+@background(schedule=midnight)
 def delete_last_verse_of_the_day():
     if VerseOfTheDay.objects.count() > 0:
         VerseOfTheDay.objects.first().delete()
@@ -13,4 +13,4 @@ def delete_last_verse_of_the_day():
 
 
 delete_last_verse_of_the_day(
-    verbose_name="Delete last verse of the day", repeat=DAILY)
+    verbose_name="Delete last verse of the day", repeat=Task.DAILY)
