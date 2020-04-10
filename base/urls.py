@@ -8,5 +8,6 @@ urlpatterns = [
     # path("accounts/signup", view=base_view.signup, name="signup"),
     path("dashboard", view=base_view.dashboard, name="dashboard"),
     path("terms", view=base_view.terms, name="terms"),
+    path("privacy", view=base_view.privacy, name="privacy"),
     path("", view=base_view.index, name="index"),
 ]

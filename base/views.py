@@ -13,6 +13,9 @@ def index(request):
 def terms(request):
     return render(request, "policy/terms.html")
 
+def privacy(request):
+    return render(request, "policy/privacy.html")
+
 def dashboard(request):
     context = {
         "verse_of_the_day": verse_of_the_day_helper.get_verse_of_the_day()
