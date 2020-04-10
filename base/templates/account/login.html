@@ -25,21 +25,8 @@
                 </div><span class=clearfix></span>
 
                 <form method="post">
-                  {% csrf_token %}
 
-                  {% if form.errors %}
-                  <div class="alert alert-outline-danger" role="alert">
-                    {% for field in form %}
-                    {% for error in field.errors %}
-                    <strong>{{ error|escape }}</strong><br>
-                    {% endfor %}
-                    {% endfor %}
-
-                    {% for error in form.non_field_errors %}
-                    <strong>{{ error|escape }}</strong><br>
-                    {% endfor %}
-                  </div>
-                  {% endif %}
+                  {% include 'partials/_form_errors.html' %}
 
                   <div class=form-group><label class=form-control-label>Email address</label>
                     <div class="input-group input-group-merge"><input type=email
