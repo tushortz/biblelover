@@ -6,7 +6,7 @@
 
 A Bible-based website with lots of features hosted at https://biblelover.herokuapp.com
 
-![Bible Lover logo](./biblelover/assets/img/brand/logo.png)
+![Bible Lover logo](./biblelover/assets/img/brand/dark.png)
 
 
 ## Documentation link for useful tools
