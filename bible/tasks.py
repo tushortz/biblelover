@@ -3,7 +3,7 @@ from background_task.models import Task, CompletedTask
 from bible.models import VerseOfTheDay
 from django.utils import timezone
 
-midnight = timezone.now().replace(hour=0, minute=7, second=59)
+midnight = timezone.now().replace(hour=23, minute=59, second=59)
 
 
 @background(schedule=midnight)
@@ -17,4 +17,4 @@ def delete_last_verse_of_the_day():
 
 
 delete_last_verse_of_the_day(
-    verbose_name="Delete last verse of the day", repeat=Task.DAILY)
+    verbose_name="Change verse of the day", repeat=Task.DAILY)
