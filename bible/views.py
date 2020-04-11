@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from bible.models import Bible
 
 
 def index(request):
@@ -6,15 +7,19 @@ def index(request):
 
 
 def book(request, book):
+    book = Bible.objects.filter(book__iexact = book)
+    chapters = book.order_by('chapter').values('chapter').distinct()
+
     context = {
-        "book": book
+        "chapters": chapters,
+        "book": book.first()
     }
 
     return render(request, 'bible/book.html', context)
 
 
 def chapter(request, book, chapter):
-    verses = ["yes", "lad", "how"]
+    verses = Bible.objects.filter(book__iexact = book, chapter=chapter).order_by('chapter')
 
     context = {
         "book": book,

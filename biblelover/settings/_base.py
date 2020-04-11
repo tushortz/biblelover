@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     # Local
     'base',
     'bible',
+    # 'preference'
 
     # 3rd party
     'debug_toolbar',

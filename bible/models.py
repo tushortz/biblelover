@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Bible(models.Model):
@@ -16,6 +17,18 @@ class Bible(models.Model):
 
     def __str__(self):
         return "{} {}:{}".format(self.book, self.chapter, self.verse)
+
+    @property
+    def get_book_url(self):
+        return reverse('bible:book', args=[self.book])
+
+    @property
+    def get_chapter_url(self):
+        return reverse('bible:chapter', args=[self.book, self.chapter])
+
+    @property
+    def get_verse_url(self):
+        return reverse('bible:verse', args=[self.book, self.chapter, self.verse])
 
     class Meta:
         ordering = ['id']

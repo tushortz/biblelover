@@ -1,1 +1,10 @@
-<h1>{{ book }}</h1>
+<h1>{{ book.book }}</h1> ..
+
+{% for book in chapters %}
+{{ book.chapter }}
+{% endfor %}
+
+<h1></h1>
+{{ book.get_book_url }} <hr>
+{{ book.get_chapter_url }} <hr>
+{{ book.get_verse_url }} <hr>
