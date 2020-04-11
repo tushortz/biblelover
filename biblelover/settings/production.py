@@ -19,16 +19,17 @@ MANAGERS = ADMIN_EMAILS
 
 ADMIN_URL = get_env_variable("ADMIN_URL")
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'assets')
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'assets')
 ]
 
-STATIC_ROOT = "assets"
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets')
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'assets'),
+)
