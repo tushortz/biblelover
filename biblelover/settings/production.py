@@ -28,3 +28,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = "assets"
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'assets')
+]
