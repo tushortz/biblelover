@@ -177,6 +177,23 @@ python manage.py runserver
 then navigate to http://localhost:8000
 
 
+## Testing application
+
+It is advisable to make sure unit testing passes before pushing to the GitHub repository. Run
+
+```
+coverage manage.py test
+coverage report
+```
+
+This will print the test reports in the terminal. Try to get the test coverage to as close to 100% as possible.
+
+If you don't have the coverage module installed, you can install by running
+
+```
+pip install coverage
+```
+
 
 ## Contributions
 
