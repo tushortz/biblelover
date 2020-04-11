@@ -1,41 +1,24 @@
 {% load static %}
-<!-- Header -->
-<header class="" id="header-main">
-  <!-- Navbar -->
-  <nav class="navbar navbar-main navbar-expand-lg navbar-light" id="navbar-main">
-    <div class="container">
-      <!-- Brand -->
-      <a class="navbar-brand" href="{% url 'home:index' %}">
-        <img alt="Bible Lover Logo" style="height:7.5rem" src="{% static 'img/brand/logo.png' %}" id="navbar-logo">
-      </a>
-      <!-- Toggler -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse"
-        aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <!-- Collapse -->
-      <div class="collapse navbar-collapse navbar-collapse-overlay" id="navbar-main-collapse">
-        <!-- Toggler -->
-        <div class="position-relative">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse"
-            aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <i data-feather="x"></i>
-          </button>
-        </div>
+<header class="" id=header-main>
+  <nav class="navbar navbar-main navbar-expand-lg shadow navbar-light" id=navbar-main>
+    <div class=container><button class="navbar-toggler order-lg-2 ml-n3 ml-lg-0" type=button data-toggle=collapse
+        data-target=#navbar-main-collapse aria-controls=navbar-main-collapse aria-expanded=false
+        aria-label="Toggle navigation"><span class=navbar-toggler-icon></span></button> <a
+        class="navbar-brand order-lg-1" href="{% url 'base:index' %}"><img alt="Image placeholder"
+          src="{% static 'img/brand/dark.png' %}" id=navbar-logo></a>
 
-        <!-- Main navigation -->
-        <ul class="navbar-nav ml-lg-auto">
-          <!-- SVG icon -->
-          <!-- <figure style="width: 25px;">
-              <img alt="Image placeholder" src="{% static 'img/svg/icons/bible.svg' %}"
-                class="img-fluid" style="height: 25px;">
-            </figure> -->
-          <!-- Dashboard -->
-          <li class="nav-item nav-item-spaced d-none d-lg-block">
-            <a class="nav-link" href="../../overview.html">
-              Dashboard
-            </a>
+      <div class="collapse navbar-collapse navbar-collapse-overlay order-lg-3" id=navbar-main-collapse>
+        <div class=position-relative><button class=navbar-toggler type=button data-toggle=collapse
+            data-target=#navbar-main-collapse aria-controls=navbar-main-collapse aria-expanded=false
+            aria-label="Toggle navigation"><i data-feather=x></i></button></div>
+
+        <ul class="navbar-nav ml-lg-auto mr-3">
+          {% if user.is_authenticated %}
+          <li class="nav-item nav-item-spaced d-none d-lg-block"><a class=nav-link
+              href="{% url 'base:dashboard' %}">Dashboard</a>
           </li>
+          {% endif %}
+
           <!-- Bible -->
           <li class="nav-item nav-item-spaced dropdown dropdown-animate" data-toggle="hover">
             <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -50,9 +33,9 @@
                   </figure>
                   <!-- Media body -->
                   <div class="media-body ml-3">
-                    <a href="../../overview.html#landing" class="d-block h6 mb-0">Read</a>
+                    <a href="{% url 'bible:index' %}" class="d-block h6 mb-0">Read</a>
                     <small class="text-sm text-muted mb-0">The sacred writings of the Old
-                      or New Testaments.</small>
+                      and New Testaments.</small>
                   </div>
                 </div>
               </div>
@@ -65,7 +48,7 @@
                   </figure>
                   <!-- Media body -->
                   <div class="media-body ml-3">
-                    <a href="../../overview.html#landing" class="d-block h6 mb-0">Notes</a>
+                    <a href="{% url 'notes:index' %}" class="d-block h6 mb-0">Notes</a>
                     <small class="text-sm text-muted mb-0">Write down what you've
                       learnt from your readings.</small>
                   </div>
@@ -85,85 +68,67 @@
                     <img alt="Read Icon" src="{% static 'img/svg/icons/quiz.svg' %}" class="img-fluid"
                       style="height: 40px;">
                   </figure>
-                  <!-- Media body -->
+                  <!-- Quiz body -->
                   <div class="media-body ml-3">
-                    <a href="../../overview.html#landing" class="d-block h6 mb-0">Quiz</a>
+                    <a href="{% url 'bible:quiz' %}" class="d-block h6 mb-0">Quiz</a>
                     <small class="text-sm text-muted mb-0">Test and improve
                       your knowledge.</small>
                   </div>
                 </div>
               </div>
+
             </div>
           </li>
-          <!-- Account -->
-          <li class="nav-item nav-item-spaced dropdown dropdown-animate" data-toggle="hover">
-            <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">Account</a>
-            <div class="dropdown-menu dropdown-menu-md p-0">
-              <div class="list-group-item border-0">
-                <div class="media d-flex">
-                  <!-- SVG icon -->
-                  <figure style="width: 40px;">
-                    <img alt="Read Icon" src="{% static 'img/svg/icons/account.svg' %}" class="img-fluid"
-                      style="height: 40px;">
-                  </figure>
-                  <!-- Media body -->
-                  <div class="media-body ml-3">
-                    <a href="../../overview.html#landing" class="d-block h6 mb-0">Profile</a>
-                    <small class="text-sm text-muted mb-0">View your personal
-                      profile.</small>
-                  </div>
-                </div>
-              </div>
-              <div class="list-group-item border-0">
-                <div class="media d-flex">
-                  <!-- SVG icon -->
-                  <figure style="width: 40px;">
-                    <img alt="Read Icon" src="{% static 'img/svg/icons/statistics.svg' %}" class="img-fluid"
-                      style="height: 40px;">
-                  </figure>
-                  <!-- Media body -->
-                  <div class="media-body ml-3">
-                    <a href="../../overview.html#landing" class="d-block h6 mb-0">Statistics</a>
-                    <small class="text-sm text-muted mb-0">Information relating
-                      to your activities.</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li>
+
         </ul>
-        <!-- Right navigation -->
+
+        {% if user.is_authenticated %}
         <ul class="navbar-nav align-items-lg-center d-none d-lg-flex ml-lg-auto">
-          <!-- Auth -->
-          <li class="nav-item">
-            {% if not request.user.is_authenticated %}
-            <a class="nav-link" href="{% url 'account_login' %}">Sign in</a>
-            {% else %}
+          <li class=nav-item><a href=# data-action=omnisearch-open data-target=#omnisearch
+              class="nav-link nav-link-icon px-2"><i data-feather=search></i></a></li>
 
-            <a href="{% url 'account_logout' %}" class="btn btn-sm btn-soft-danger btn-icon ml-3">
-              <span class="btn-inner--icon"><i data-feather="log-out"></i></span>
-              <span class="btn-inner--text">Log out</span>
-            </a>
-            {% endif %}
+          <li class="nav-item dropdown dropdown-animate"><a class="nav-link nav-link-icon px-2" href=# role=button
+              data-toggle=dropdown aria-haspopup=true aria-expanded=false><i data-feather=settings></i></a>
+            <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow p-3">
+              <h6 class="dropdown-header px-0 mb-2 text-primary">{{ request.user.first_name }}</h6><a
+                href="{% url 'base:profile' %}" class=dropdown-item><i data-feather=user></i> <span>My profile</span>
+              </a><a href=../../pages/account/billing.html class=dropdown-item><i data-feather=credit-card></i>
+                <span>Billing</span> </a><a href=../../pages/boards/overview.html class=dropdown-item><i
+                  data-feather=activity></i> <span>Dashboard</span></a>
+              <div class=dropdown-divider></div><a href=../../pages/account/settings.html class=dropdown-item><i
+                  data-feather=settings></i> <span>Settings</span> </a><a
+                href=../../pages/authentication/login-basic.html class=dropdown-item><i data-feather=log-out></i>
+                <span>Logout</span></a>
+            </div>
           </li>
 
-          {% if not request.user.is_authenticated %}
-          <li class="nav-item">
-            <a href="{% url 'account_signup' %}"
-              class="btn btn-sm btn-primary btn-icon ml-3">
-              <span class="btn-inner--icon"><i data-feather="user-plus"></i></span>
-              <span class="btn-inner--text">Register</span>
-            </a>
-          </li>
-          {% endif %}
+          <li class="nav-item dropdown dropdown-animate"><a class="nav-link nav-link-icon px-2"
+              href=#modal-notifications role=button data-toggle=modal><i data-feather=bell></i></a></li>
         </ul>
-        <!-- Mobile button -->
-        <div class="d-lg-none px-4 text-center">
-          <a href="https://themes.getbootstrap.com/product/quick-website-ui-kit-2/"
-            class="btn btn-block btn-sm btn-primary" target="_blank">Purchase now</a>
-        </div>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <div class="d-lg-none px-4 text-center"><a href="{% url 'account_logout' %}"
+            class="btn btn-block btn-sm btn-warning">Sign out</a></div>
+
+        <div class="order-lg-4 ml-lg-3"><a class="" href=#modal-profile role=button data-toggle=modal>
+            <span class="avatar rounded-circle"><img alt="Image placeholder" style="width: 1.5rem;"
+                src="{% static 'img/icons/custom/user.png' %}"></span></a></div>
+        {% else %}
+        <!-- SIGN IN AND REGISTER -->
+        <ul class="navbar-nav align-items-lg-center d-none d-lg-flex ml-lg-auto">
+          <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Sign in</a></li>
+          <li class="nav-item"><a href="{% url 'account_signup' %}" class="btn btn-sm btn-primary btn-icon ml-3">
+              <i class="fa fa-user-friends"></i> <span class="btn-inner--text">Register</span>
+            </a></li>
+        </ul>
+
+        <div class="d-lg-none px-4 text-center"><a href="{% url 'account_login' %}"
+            class="btn btn-block btn-sm btn-soft-primary">Sign in</a></div>
+        {% endif %}
+
       </div>
+
     </div>
   </nav>
 </header>

@@ -81,21 +81,21 @@
         </div>
       </div>
 
-      {% if request.user.is_authenticated %}
+      {% if user.is_authenticated %}
+      
       <div class="modal-footer py-3 mt-auto"><a href="{% url 'account_logout' %}"
           class="btn btn-block btn-sm btn-neutral btn-icon rounded-pill">
           <span class=btn-inner--icon><i data-feather=log-out></i></span> <span class=btn-inner--text>Sign out</span>
         </a></div>
 
-        {% else %}
-        <div class="modal-footer py-3 mt-auto"><a href="{% url 'account_login' %}"
+      {% else %}
+      <div class="modal-footer py-3 mt-auto"><a href="{% url 'account_login' %}"
           class="btn btn-block btn-sm btn-neutral btn-icon rounded-pill">
           <span class=btn-inner--icon><i data-feather=log-in></i></span> <span class=btn-inner--text>Sign in</span>
         </a></div>
-
+      {% endif %}
     </div>
 
 
-    {% endif %}
   </div>
 </div>

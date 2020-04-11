@@ -1,13 +1,22 @@
 from django.shortcuts import render
 from bible.models import Bible
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    return render(request, 'bible/index.html')
+    old_books = Bible.objects.filter(category="old").order_by('category').values('book').distinct()
+    new_books = Bible.objects.filter(category="new").order_by('category').values('book').distinct()
+
+    context = {
+        "old_books": old_books,
+        "new_books": new_books
+    }
+
+    return render(request, 'bible/index.html', context)
 
 
 def book(request, book):
-    book = Bible.objects.filter(book__iexact = book)
+    book = Bible.objects.filter(book__iexact=book)
     chapters = book.order_by('chapter').values('chapter').distinct()
 
     context = {
@@ -19,10 +28,12 @@ def book(request, book):
 
 
 def chapter(request, book, chapter):
-    verses = Bible.objects.filter(book__iexact = book, chapter=chapter).order_by('chapter')
+    book = Bible.objects.filter(
+        book__iexact=book, chapter=chapter)
+    verses = book.order_by('chapter')
 
     context = {
-        "book": book,
+        "book": book.first(),
         "chapter": chapter,
         "verses": verses
     }
@@ -30,11 +41,10 @@ def chapter(request, book, chapter):
 
 
 def verse(request, book, chapter, verse):
+    book = Bible.objects.get(book__iexact=book, chapter=chapter, verse=verse)
+
     context = {
-        "book": book,
-        "chapter": chapter,
-        "verse": verse,
-        "text": "hello"
+        "book": book
     }
     return render(request, 'bible/verse.html', context)
 
@@ -46,3 +56,9 @@ def search(request):
     }
 
     return render(request, 'bible/search.html', context)
+
+
+@login_required
+def quiz(request):
+    context = {}
+    return render(request, 'bible/quiz.html', context)

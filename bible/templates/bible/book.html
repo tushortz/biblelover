@@ -1,10 +1,32 @@
-<h1>{{ book.book }}</h1> ..
+{% extends "partials/_layout.html" %}
 
-{% for book in chapters %}
-{{ book.chapter }}
-{% endfor %}
+{% block title %} Bible :: {% endblock title %}
 
-<h1></h1>
-{{ book.get_book_url }} <hr>
-{{ book.get_chapter_url }} <hr>
-{{ book.get_verse_url }} <hr>
+{% block body %}
+<section class="slice slice-lg">
+  <div class="container">
+    <div class="row mb-5 justify-content-center text-center">
+      <div class="col-lg-8 col-md-10">
+        <h2 class="mt-4 text-capitalize"><i class="fa fa-book-open"></i> {{ book.book }} </h2>
+        <div class="mt-2">
+          <p class="lead lh-180"><span class="text-capitalize">{{ book.book }}</span> is a part of the {{ book.category }} testament
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      {% for verse in chapters %}
+      <div class="col-lg-1">
+        <div class="card-body py-5">
+          <div class="d-flex align-items-start hover-shadow-lg">
+            <h5 class="ma-0"><a href="{% url 'bible:chapter' book.book verse.chapter %}">{{ verse.chapter }}</a></h5>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock body %}
