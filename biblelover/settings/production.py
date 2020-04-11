@@ -26,3 +26,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'assets')
 ]
+
+STATIC_ROOT = "assets"
