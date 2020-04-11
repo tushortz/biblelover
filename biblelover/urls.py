@@ -13,6 +13,7 @@ if settings.DEBUG:
 urlpatterns = debug_url_pattern + [
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
+    path('bible/', include('bible.urls', namespace='bible')),
     path('', include('base.urls', namespace='home')),
     re_path('assets/(?P<path>.*)$', serve,
             {'document_root': settings.STATIC_ROOT}),
