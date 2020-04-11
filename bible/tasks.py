@@ -5,6 +5,7 @@ from django.utils import timezone
 
 midnight = timezone.now().replace(hour=0, minute=7, second=59)
 
+
 @background(schedule=midnight)
 def delete_last_verse_of_the_day():
     Task.objects.all().delete()
