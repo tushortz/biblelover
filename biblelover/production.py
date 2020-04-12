@@ -111,6 +111,8 @@ LOGIN_REDIRECT_URL = '/dashboard/'
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
+DEBUG = True
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -145,9 +147,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 STATIC_URL = '/assets/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "assets")
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
-STATICFILES_DIRS = (
-    "app/assets",
-    os.path.join(BASE_DIR, 'biblelover/assets')
-)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'biblelover/assets'),
+]
