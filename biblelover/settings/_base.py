@@ -127,8 +127,7 @@ PAGINATE_COUNT = 50
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets')
-]
 
 STATIC_URL = '/assets/'
+
+STATIC_ROOT = os.path.join(".", "assets")
