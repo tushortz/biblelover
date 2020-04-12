@@ -1,6 +1,6 @@
 import os
-from biblelover.settings._all_auth_settings import *
 import dj_database_url
+from biblelover.settings.base_setting import *
 
 
 SECRET_KEY = get_env_variable('SECRET_KEY')
