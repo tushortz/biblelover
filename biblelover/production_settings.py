@@ -3,6 +3,9 @@ import dj_database_url
 from biblelover.settings.base_setting import *
 
 
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 SECRET_KEY = get_env_variable('SECRET_KEY')
 
 DATABASES = {}
@@ -38,10 +41,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'biblelover/assets'),
-]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets'),
 ]
