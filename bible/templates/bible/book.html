@@ -9,7 +9,7 @@
       <div class="col-lg-8 col-md-10">
         <h2 class="mt-4 text-capitalize"><i class="fa fa-book-open"></i> {{ book.book }} </h2>
         <div class="mt-2">
-          <p class="lead lh-180"><span class="text-capitalize">{{ book.book }}</span> is a part of the {{ book.category }} testament
+          <p class="lead lh-180"><span class="text-capitalize">{{ book.book }}</span> is a part of the <a href="{% url 'bible:index' %}#{{ book.category }}">{{ book.category }} testament</a>
           </p>
         </div>
       </div>
@@ -17,7 +17,7 @@
 
     <div class="row text-center">
       {% for verse in chapters %}
-      <div class="col-lg-1">
+      <div class="col-lg-1 col-md-2 col-sm-2">
         <div class="card-body py-5">
           <div class="d-flex align-items-start hover-shadow-lg">
             <h5 class="ma-0"><a href="{% url 'bible:chapter' book.book verse.chapter %}">{{ verse.chapter }}</a></h5>
