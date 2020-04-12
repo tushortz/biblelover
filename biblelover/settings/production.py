@@ -23,7 +23,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
-    "/app/assets/"
+    os.path.join(".", 'assets'),
+
 )
 
 FORCE_SCRIPT_NAME = '/app'
@@ -31,3 +32,5 @@ FORCE_SCRIPT_NAME = '/app'
 STATIC_URL = FORCE_SCRIPT_NAME + '/static/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+WHITENOISE_USE_FINDERS = False
