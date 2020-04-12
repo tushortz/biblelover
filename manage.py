@@ -5,7 +5,7 @@ import sys
 from biblelover.settings.base_setting import *
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'biblelover.production_settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'biblelover.development_settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
