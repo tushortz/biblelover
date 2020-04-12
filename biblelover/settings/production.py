@@ -21,11 +21,13 @@ ADMIN_URL = get_env_variable("ADMIN_URL")
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets')
-]
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
     "/app/assets/"
 )
+
+FORCE_SCRIPT_NAME = '/app'
+
+STATIC_URL = FORCE_SCRIPT_NAME + '/static/'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

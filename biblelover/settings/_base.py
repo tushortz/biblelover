@@ -101,8 +101,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 DATABASES = {}
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     "allauth.account.auth_backends.AuthenticationBackend",
@@ -130,4 +128,4 @@ PAGINATE_COUNT = 50
 
 STATIC_URL = '/assets/'
 
-STATIC_ROOT = os.path.join(".", "assets")
+STATIC_ROOT = os.path.join(".", "staticfiles")
