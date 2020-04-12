@@ -2,6 +2,7 @@ import os
 from django.core.exceptions import ImproperlyConfigured
 from biblelover.settings._all_auth_settings import *
 from biblelover.settings._markdownify_setting import *
+import dj_database_url
 
 
 def get_env_variable(var_name):
@@ -58,7 +59,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'biblelover.urls'
@@ -126,6 +126,28 @@ PAGINATE_COUNT = 50
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+SECRET_KEY = get_env_variable('SECRET_KEY')
+
+DATABASES = {}
+DATABASES['default'] = dj_database_url.parse(
+    get_env_variable('DATABASE_URL'), conn_max_age=600)
+
+ADMIN_EMAILS = [
+    [get_env_variable("ADMIN_FULL_NAME"), get_env_variable("ADMIN_EMAIL_ADDRESS")]]
+
+ADMINS = ADMIN_EMAILS
+
+MANAGERS = ADMIN_EMAILS
+
+ADMIN_URL = 'get_env_variable("ADMIN_URL")'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 STATIC_URL = '/assets/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "assets")
+
+STATICFILES_DIRS = (
+    "app/assets",
+    os.path.join(BASE_DIR, 'biblelover/assets')
+)

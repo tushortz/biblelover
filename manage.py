@@ -5,7 +5,7 @@ import sys
 
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'biblelover.settings.development')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'biblelover.production')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
