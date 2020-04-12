@@ -1,0 +1,38 @@
+{% extends "partials/_layout.html" %}
+{% load static %}
+{% block title %} Account inactive {% endblock title %}
+
+{% block body %}
+
+<section class="section-half-rounded bg-cover bg-size--cover py-4 py-sm-0"
+style=background-image:url("{% static 'img/backgrounds/img-4.jpg' %}")>
+<div class="container-fluid d-flex flex-column">
+  <div class="row align-items-center min-vh-100">
+    <div class="col-md-6 col-lg-5 col-xl-4 mx-auto">
+      <div class="card shadow-lg border-0 mb-0">
+        <div class="card-body py-5 px-sm-5">
+          <div>
+            <div class="mb-4 text-center">
+              <h2 class="h3 mb-5">Account inactive</h2>
+              <p class="text-muted mb-0 font-weight-light alert alert-outline-danger">This account is inactive.</p>
+            </div>
+
+            <div class="text-center"><small>Please <a href="mailto:bibleloverbl@gmail.com">contact us</a> if you are facing any issues.</small></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+</body>
+
+{% endblock body %}
+
+{% include "partials/_footer.html" %}
+
+{% include "partials/_script.html" %}
+
+</html>

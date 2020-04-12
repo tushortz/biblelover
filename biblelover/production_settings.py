@@ -111,7 +111,7 @@ LOGIN_REDIRECT_URL = '/dashboard/'
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-DEBUG = False
+DEBUG = True
 
 LANGUAGE_CODE = 'en-us'
 
