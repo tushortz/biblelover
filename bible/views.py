@@ -30,7 +30,7 @@ def book(request, book):
 def chapter(request, book, chapter):
     book = Bible.objects.filter(
         book__iexact=book, chapter=chapter)
-    verses = book.order_by('chapter')
+    verses = book.order_by('verse')
 
     context = {
         "book": book.first(),
