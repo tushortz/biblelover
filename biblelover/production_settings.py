@@ -141,7 +141,7 @@ ADMINS = ADMIN_EMAILS
 
 MANAGERS = ADMIN_EMAILS
 
-ADMIN_URL = 'get_env_variable("ADMIN_URL")'
+ADMIN_URL = get_env_variable("ADMIN_URL")
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
