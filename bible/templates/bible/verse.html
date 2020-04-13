@@ -1,4 +1,38 @@
-{{ book }} {{ chapter }} {{ verse }}
+{% extends "partials/_layout.html" %}
 
+{% block title %} Bible :: {% endblock title %}
 
-<p>{{ verse }}. {{ text }}</p>
+{% block body %}
+{% if book %}
+<section class="slice slice-sm">
+  <div class="container position-relative">
+    <div class="card shadow-sm border-0 zindex-100">
+      <div class="card-body px-5 py-5 text-center text-md-left">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <h1 class="text-capitalize">{{ book }}</h1>
+            <div class="divider"></div>
+            <h4 class="h5 mb-2">{{ book.text }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-10 position-absolute bottom-n3 left-n5"><svg xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 361.1 384.8"
+        style="enable-background:new 0 0 361.1 384.8;" xml:space="preserve"
+        class="injected-svg svg-inject fill-primary">
+        <path
+          d="M53.1,266.7C19.3,178-41,79.1,41.6,50.1S287.7-59.6,293.8,77.5c6.1,137.1,137.8,238,15.6,288.9 S86.8,355.4,53.1,266.7z">
+        </path>
+      </svg></div>
+    <div class="w-10 position-absolute top-n5 right-n5"><svg xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 361.1 384.8"
+        style="enable-background:new 0 0 361.1 384.8;" xml:space="preserve" class="injected-svg svg-inject fill-dark">
+        <path
+          d="M53.1,266.7C19.3,178-41,79.1,41.6,50.1S287.7-59.6,293.8,77.5c6.1,137.1,137.8,238,15.6,288.9 S86.8,355.4,53.1,266.7z">
+        </path>
+      </svg></div>
+  </div>
+</section>
+{% endif %}
+{% endblock body %}

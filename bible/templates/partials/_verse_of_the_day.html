@@ -3,19 +3,19 @@
 {% if verse_of_the_day %}
 <section class="slice slice-sm">
   <div class="container position-relative">
-    <div class="card shadow-lg border-0 zindex-100">
+    <div class="card shadow-sm border-0 zindex-100">
       <div class="card-body px-5 py-5 text-center text-md-left">
         <div class="row align-items-center">
           <div class="col-md-8">
             <h1>Verse of the day</h1>
             <div class="divider"></div>
             <h4 class="h5 mb-2">{{ verse_of_the_day.verse.text }}</h4>
-            <p class="mb-0 text-capitalize"><a href="#">{{ verse_of_the_day.verse }}</a></p>
+            <p class="mb-0 text-capitalize"><a href="{{ verse_of_the_day.verse.get_verse_url }}">{{ verse_of_the_day.verse }}</a></p>
           </div>
           <div class="col-12 col-md-4 mt-4 mt-md-0 text-md-right"><a href="#"
               class="btn btn-warning btn-icon rounded-pill"><span class="btn-inner--icon">
                 <i data-feather="eye"></i>
-              </span><span class="btn-inner--text text-capitalize">View comments</span></a></div>
+              </span><span class="btn-inner--text text-capitalize">View discussions</span></a></div>
         </div>
       </div>
     </div>

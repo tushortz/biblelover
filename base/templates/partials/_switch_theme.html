@@ -1,0 +1,33 @@
+{% load static %}
+<div class=customizer><button type=button id=btnSwitchMode data-mode=dark
+    class="btn btn-primary btn-sm btn-icon-only rounded-circle hover-scale-110 shadow-lg"><i
+      class="fas fa-moon"></i></button></div>
+<div class="modal fade fixed-right" id=modal-customizer tabindex=-1 role=dialog aria-hidden=true>
+  <div class="modal-dialog modal-vertical" role=document>
+    <form class=modal-content id=form-customizer>
+      <div class=modal-body><button type=button class=close data-dismiss=modal aria-label=Close data-toggle=tooltip
+          data-placement=left title="Close Customizer"><span aria-hidden=true>&times;</span></button>
+        <div class="text-center mx-auto mt-4 mb-5" style=width:80px><img alt="Image placeholder"
+            src="{% static 'img/brand/dark.png' %}"" class=" svg-inject img-fluid"></div>
+        <h5 class="text-center mb-2">Customize Quick</h5>
+        <p class="text-center mb-4">Customize your preview experience by selecting skin colors and modes.</p>
+        <hr class=mb-4>
+        <h6 class=mb-1>Skin color</h6>
+        <p class="small text-muted mb-3">Set a new theme color palette.</p>
+        <div class="btn-group-toggle row mx-0 mb-5" data-toggle=buttons><label
+            class="btn btn-sm btn-neutral active col mb-2"><input type=radio name=skin value=default checked=checked>
+            Default</label> <label class="btn btn-sm btn-neutral col-6 mb-2 mr-0"><input type=radio name=skin
+              value=blue> Blue</label></div>
+        <h6 class=mb-1>Skin mode</h6>
+        <p class="small text-muted mb-3">Set the theme's mode: light or dark.</p>
+        <div class="btn-group-toggle row mx-0 mb-4" data-toggle=buttons><label
+            class="btn btn-sm btn-neutral active flex-fill mb-2 mr-2"><input type=radio name=mode value=light
+              checked=checked> <i data-feather=sun class=mr-2></i> Light</label> <label
+            class="btn btn-sm btn-neutral flex-fill mb-2 mr-2"><input type=radio name=mode value=dark> <i
+              data-feather=moon class=mr-2></i> Dark</label></div>
+      </div>
+      <div class="modal-footer border-0"><button type=submit class="btn btn-block btn-primary mt-auto">Preview</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -19,6 +19,6 @@ class BaseViewTest(TestCase):
         response = self.client.get(reverse("base:privacy"))
         self.assertEqual(response.status_code, 200)
 
-    def test_dashboard_url_exists(self):
+    def test_dashboard_url_redirects_when_not_logged_in(self):
         response = self.client.get(reverse("base:dashboard"))
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)

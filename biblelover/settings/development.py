@@ -17,6 +17,8 @@ DATABASES = {
     }
 }
 
+ADMIN_URL = 'admin/'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'assets')
 ]

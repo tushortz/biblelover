@@ -18,6 +18,7 @@ class BibleAdmin(admin.ModelAdmin):
     def has_change_permission(self, request, obj=None):
         return False
 
+
 @admin.register(VerseOfTheDay)
 class VerseOfTheDayAdmin(admin.ModelAdmin):
     autocomplete_fields = ['verse']

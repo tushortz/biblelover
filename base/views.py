@@ -20,8 +20,21 @@ def privacy(request):
     return render(request, "policy/privacy.html")
 
 
+@login_required
 def dashboard(request):
     context = {
     }
 
     return render(request, "base/dashboard.html", context)
+
+
+@login_required
+def profile(request):
+    user = request.user
+
+    context = {
+        "user": user
+    }
+
+    return render(request, "account/profile.html", context)
+

@@ -1,13 +1,53 @@
-<h1>The Bible</h1>
+{% extends "partials/_layout.html" %}
 
-<h2>Old testament</h2>
-<ul>
-  <li>Genesis</li>
-  <li>...</li>
-</ul>
+{% block title %} Bible :: {% endblock title %}
 
-<h2>New testament</h2>
-<ul>
-  <li>Matthew</li>
-  <li>...</li>
-</ul>
+{% block body %}
+<section class="slice slice-lg">
+  <div class="container">
+    <div class="row mb-5 justify-content-center text-center">
+      <div class="col-lg-8 col-md-10">
+        <h2 class="mt-4"><i class="fa fa-book-open"></i> Books of the Bible</h2>
+        <div class="mt-2">
+          <p class="lead lh-180">Start reading the Bible to improve your knowledge of the scriptures
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card bg-gradient-gray-dark hover-shadow-lg">
+          <div class="card-body py-5">
+            <div class="d-flex align-items-start">
+              <div class="icon rounded-circle text-white"><i class="fa fa-2x fa-arrow-down"></i></div>
+              <div class="icon-text pl-4">
+                <h5 class="ma-0 text-white">Old Testament ({{ old_books.count }})</h5>
+                {% for verse in old_books %}
+                <p class="mb-0 text-white opacity-8 text-capitalize"><a class="text-white" href="{% url 'bible:book' verse.book %}">{{ verse.book }}</a></p>
+                  {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card bg-translucent-dark hover-shadow-lg">
+          <div class="card-body py-5">
+            <div class="d-flex align-items-start">
+              <div class="icon text-white rounded-circle"><i class="fa fa-2x fa-arrow-up"></i></div>
+              <div class="icon-text pl-4">
+                <h5 class="ma-0">New Testament ({{ new_books.count }})</h5>
+                {% for verse in new_books %}
+                <p class="mb-0 text-white opacity-8 text-capitalize"><a class="text-white" href="{{ verse.book }}">{{ verse.book }}</a></p>
+                  {% endfor %}
+                </a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock body %}

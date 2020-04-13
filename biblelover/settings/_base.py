@@ -1,6 +1,7 @@
 import os
 from django.core.exceptions import ImproperlyConfigured
 from biblelover.settings._all_auth_settings import *
+from biblelover.settings._markdownify_setting import *
 
 
 def get_env_variable(var_name):
@@ -36,8 +37,11 @@ INSTALLED_APPS = [
     # Local
     'base',
     'bible',
+    'note',
+    'preference',
 
     # 3rd party
+    'markdownify',
     'debug_toolbar',
     'allauth',
     'allauth.account',
@@ -54,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'biblelover.urls'
@@ -96,12 +101,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 DATABASES = {}
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/dashboard/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/

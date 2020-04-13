@@ -1,6 +1,38 @@
-<h1>{{ book }} {{ chapter }}</h1>
+{% extends "partials/_layout.html" %}
 
+{% block title %} Bible :: {% endblock title %}
 
-{% for verse in verses %}
-  <p>{{ verse }}</p>
-{% endfor %}
+{% block body %}
+<section class="slice slice-sm bg-section-secondary">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div>
+          <div class="row align-items-center mb-5">
+            <div class="col">
+              <h3 class="mb-0 text-uppercase">{{ book.book }} {{ book.chapter }}</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="card card-fluid">
+                <div class="card-body">
+                  {% for book in verses %}
+
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h5 class="mb-0"><sup class="mr-3">{{ book.verse }} </sup> <a href="{{ book.get_verse_url }}">{{ book.text }}</a></h5>
+                    </div>
+                  </div>
+                  <hr class="my-4">
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock body %}
