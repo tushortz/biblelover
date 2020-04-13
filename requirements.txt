@@ -10,3 +10,4 @@ coverage==5.0.4
 django-debug-toolbar==2.2
 factory_boy==2.12.0
 django-markdownify==0.8.0
+django-emoji==2.2.2

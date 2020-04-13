@@ -1,0 +1,22 @@
+{% load custom_tags %}
+
+{% with request.path|as_breadcrumbs as paths %}
+
+{% if paths %}
+<section class="slice slice-md">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        {% for name, path in paths.items %}
+          {% if forloop.last %}
+            <li class="breadcrumb-item active" aria-current="page">{{ name }}</li>
+          {% else %}
+            <li class="breadcrumb-item"><a href="{{ path }}">{{ name }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ol>
+    </nav>
+  </div>
+</section>
+{% endif %}
+{% endwith %}
