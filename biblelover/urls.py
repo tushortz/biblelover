@@ -15,6 +15,7 @@ urlpatterns = debug_url_pattern + [
     path(settings.ADMIN_URL, admin.site.urls),
     path('bible/', include('bible.urls', namespace='bible')),
     path('notes/', include('note.urls', namespace='notes')),
+    path('emoji/', include('emoji.urls')),
     path('', include('base.urls', namespace='home')),
     re_path('assets/(?P<path>.*)$', serve,
             {'document_root': settings.STATIC_ROOT}),

@@ -9,3 +9,5 @@ class NoteAdmin(admin.ModelAdmin):
     search_fields = ['title', 'text']
     ordering = ['-updated_on']
     autocomplete_fields = ['verses']
+
+    filter_horizontal = ['verses', 'liked_by']

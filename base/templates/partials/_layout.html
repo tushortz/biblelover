@@ -1,13 +1,13 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 {% include "partials/_head.html" %}
 
 <body>
-  <!-- Preloader -->
-    <!-- Modal profile -->
-    {% include "partials/_preloader.html" %}
+  <!-- Modal profile -->
+  {% include "partials/_preloader.html" %}
 
   {% if user.is_authenticated %}
   <!-- Modal profile -->
@@ -31,6 +31,8 @@
   <!-- Modal profile -->
   {% include "partials/_omnisearch.html" %}
 
+  {% include "partials/_breadcrumbs.html" %}
+
   <!-- Main content -->
   {% block body %}{% endblock body %}
 
@@ -38,5 +40,4 @@
 
 {% include "partials/_footer.html" %}
 {% include "partials/_script.html" %}
-
 </html>
