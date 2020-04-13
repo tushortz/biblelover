@@ -1,0 +1,31 @@
+{% extends "partials/_layout.html" %}
+{% load static %}
+{% block title %} Verify Your E-mail Address {% endblock title %}
+
+{% block body %}
+
+<section class="section-half-rounded bg-cover bg-size--cover py-4 py-sm-0"
+style=background-image:url("{% static 'img/backgrounds/img-3.jpg' %}")>
+<div class="container-fluid d-flex flex-column">
+  <div class="row align-items-center min-vh-100">
+    <div class="col-md-6 col-lg-5 col-xl-4 mx-auto">
+      <div class="card shadow-lg border-0 mb-0">
+        <div class="card-body py-5 px-sm-5">
+          <div>
+            <div class="mb-5 text-center">
+              <h6 class="h3 mb-1">Verify Your E-mail Address</h6>
+              <p class="text-muted mb-0">We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process.</p>
+            </div>
+
+            <div class="text-center"><small>Please <a href="mailto:bibleloverbl@gmail.com">contact us</a> if you have any trouble verifying your email.</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+</body>
+
+{% endblock body %}

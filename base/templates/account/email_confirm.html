@@ -1,77 +1,48 @@
+{% extends "partials/_layout.html" %}
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-
-{% include "partials/_head.html" %}
-
-<title>Confirm E-mail address :: Bible Lover</title>
+{% block title %} Confirm E-mail address {% endblock title %}
 
 {% block body %}
 
-<body>
-
-  <section>
-    <div class="container d-flex align-items-center text-center text-lg-left py-5 py-lg-6 border-bottom">
-      <div class="col px-0">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-
+<section class="section-half-rounded bg-cover bg-size--cover py-4 py-sm-0"
+style=background-image:url("{% static 'img/backgrounds/img-4.jpg' %}")>
+<div class="container-fluid d-flex flex-column">
+  <div class="row align-items-center min-vh-100">
+    <div class="col-md-6 col-lg-5 col-xl-4 mx-auto">
+      <div class="card shadow-lg border-0 mb-0">
+        <div class="card-body py-5 px-sm-5">
+          <div>
             {% if confirmation %}
 
-            <h2 class="h1 mb-2">Confirm E-mail address</h2>
-
-            <h6 class="font-weight-light text-muted">Thanks for registering. Please confirm that <a
-                class="text-underline--dashed"
-                href="mailto:{{ confirmation.email_address.email }}">{{ confirmation.email_address.email }}</a> is the
-              email for user <span class="text-underline--dashed">{{ confirmation.email_address.user }}</span> </h6>
+            <div class="mb-4 text-center">
+              <h2 class="h3 mb-5">Confirm E-mail address</h2>
+              <p class="text-muted mb-0">Thanks for registering. Please confirm that <a
+                href="mailto:{{ confirmation.email_address.email }}">{{ confirmation.email_address.email }}</a> is the email for user <span class="text-underline--dashed">{{ confirmation.email_address.user }}</span> </p>
+            </div>
 
             <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
               {% include 'partials/_form_errors.html' %}
-              <button class="btn btn-success my-2 ml-0 ml-sm-3" type="submit">Confirm</button>
+              <button class="btn btn-info my-2 ml-0 ml-sm-3 center" type="submit">Confirm</button>
             </form>
+
+            <div class="text-center"><small><strong>Note:</strong> you can still <a href="{{ account_email }}">change your e-mail address</a>.</small></div>
 
             {% else %}
 
             <h6 class="font-weight-light alert alert-outline-danger">This e-mail confirmation link expired or is
-              invalid. Please <a class="text-underline--dashed" href="{% url 'account_email' %}">issue a new e-mail
-                confirmation
-                request</a>.</a></span> </h6>
-
-
+              invalid. Please <a class="text-underline--dashed" href="{% url 'account_email' %}">issue a new e-mail confirmation request</a>.</a></span> </h6>
+            {% endif %}
           </div>
 
         </div>
-
       </div>
     </div>
-  </section>
-
-  {% endif %}
-
-
-  <section>
-    <div class="container d-flex align-items-center text-center text-lg-left py-5 py-lg-6 border-bottom">
-      <div class="col px-0">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-
-            <a href="{% url 'account_email' %}" class="btn btn-soft-dark btn-icon my-2"><span
-                class="btn-inner--icon fa fa-inbox"> </span><span class="btn-inner--text">Change E-mail</span> </a>
-
-
-            <a href="{% url 'account_logout' %}" class="btn btn-warning my-2 ml-0 ml-sm-3"><span
-                class="btn-inner--icon fa fa-sign-out-alt"></span>
-              <span class="btn-inner--text">Sign out</span></a>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  </div>
+</div>
+</section>
 
 </body>
+
 {% endblock body %}
 
 {% include "partials/_footer.html" %}
