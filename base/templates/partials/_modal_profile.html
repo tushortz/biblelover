@@ -7,12 +7,12 @@
               aria-hidden=true>&times;</span></button></div>
         <div class=px-4>
           <div class="d-flex my-4">
-            <div class="avatar-parent-child mx-auto"><img alt="{{ request.user.get_full_name }} profile"
+            <div class="avatar-parent-child mx-auto"><img alt="{{ request.user.get_full_name|default:request.user }} profile"
                 src="{% static 'img/icons/custom/user.png' %}" width class="avatar avatar-xl rounded-circle"> <span
                 class="avatar-child avatar-badge bg-success"></span></div>
           </div>
           <div class="text-center mb-4">
-            <h6 class="h5 mb-0">{{ request.user.get_full_name }}</h6><span
+            <h6 class="h5 mb-0">{{ request.user.get_full_name|default:request.user }}</h6><span
               class="d-block text-muted">{{ request.user.email }}</span>
           </div>
           <div class="d-flex mb-5">
