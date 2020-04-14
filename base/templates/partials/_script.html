@@ -7,11 +7,12 @@
 <script src="{% static 'js/feather.min.js' %}"></script>
 <script src="{% static 'js/in-view.min.js' %}"></script>
 <script src="{% static 'js/swiper.min.js' %}"></script>
-
-
-<!-- Optional JS -->
 <script src="{% static 'js/sticky-kit.min.js' %}"></script>
 <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+
+{% if requst.user.is_authenticated %}
+<!-- Optional JS -->
+
 <!-- Page JS -->
 <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
 <script src="{% static 'js/typed.min.js' %}"></script>
@@ -20,7 +21,7 @@
 <script src="{% static 'js/apexcharts.min.js' %}"></script>
 <script src="{% static 'js/jquery.mask.min.js' %}"></script>
 <script src="{% static 'js/brands.min.js' %}"></script>
-
+{% endif %}
 
 <script src="{% static 'js/progressbar.min.js' %}"></script>
 <script src="{% static 'js/quick-website.min.js' %}"></script>
