@@ -13,13 +13,15 @@ def split(value, arg):
 @register.filter(name='as_breadcrumbs')
 @stringfilter
 def as_breadcrumbs(values):
-    values = values.replace("/", " ").strip().split(" ")
+    values = values.strip("/").replace("/", "|").split("|")
 
-    url_dict = {"Home": "/"}
+    url_dict = {}
     url = ""
 
     for value in values:
-        url += ("/" + value)
-        url_dict[value.title().strip()] = url
+        if value:
+            url += ("/" + value)
+            title = value.title().strip().replace("_", " ")
+            url_dict[title] = url
 
     return url_dict

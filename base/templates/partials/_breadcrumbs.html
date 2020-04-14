@@ -2,15 +2,20 @@
 
 {% with request.path|as_breadcrumbs as paths %}
 
-{% if paths %}
 <section class="slice slice-md">
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
+        {% if paths|length %}
+          <li class="breadcrumb-item"><a href="{% url 'base:index' %}">Home</a></li>
+        {% else %}
+          <li class="breadcrumb-item" aria-current="page">Home</li>
+        {% endif %}
+
         {% for name, path in paths.items %}
           {% if forloop.last %}
             <li class="breadcrumb-item active" aria-current="page">{{ name }}</li>
-          {% else %}
+              {% else %}
             <li class="breadcrumb-item"><a href="{{ path }}">{{ name }}</a></li>
           {% endif %}
         {% endfor %}
@@ -18,5 +23,4 @@
     </nav>
   </div>
 </section>
-{% endif %}
 {% endwith %}
