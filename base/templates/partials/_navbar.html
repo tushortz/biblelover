@@ -4,7 +4,7 @@
     <div class=container><button class="navbar-toggler order-lg-2 ml-n3 ml-lg-0" type=button data-toggle=collapse
         data-target=#navbar-main-collapse aria-controls=navbar-main-collapse aria-expanded=false
         aria-label="Toggle navigation"><span class=navbar-toggler-icon></span></button> <a
-        class="navbar-brand order-lg-1" href="{% url 'base:index' %}"><img alt="Image placeholder"
+        class="navbar-brand order-lg-1" href="{% url 'base:index' %}"><img alt="Bible Lover" style="height:3.0rem"
           src="{% static 'img/brand/dark.png' %}" id=navbar-logo></a>
 
       <div class="collapse navbar-collapse navbar-collapse-overlay order-lg-3" id=navbar-main-collapse>
@@ -93,11 +93,11 @@
               <h6 class="dropdown-header px-0 mb-2 text-primary">{{ request.user.first_name }}</h6><a
                 href="{% url 'base:profile' %}" class=dropdown-item><i data-feather=user></i> <span>My profile</span>
               </a><a href=../../pages/account/billing.html class=dropdown-item><i data-feather=credit-card></i>
-                <span>Billing</span> </a><a href=../../pages/boards/overview.html class=dropdown-item><i
+                <span>Friends</span> </a><a href=../../pages/boards/overview.html class=dropdown-item><i
                   data-feather=activity></i> <span>Dashboard</span></a>
               <div class=dropdown-divider></div><a href=../../pages/account/settings.html class=dropdown-item><i
-                  data-feather=settings></i> <span>Settings</span> </a><a
-                href=../../pages/authentication/login-basic.html class=dropdown-item><i data-feather=log-out></i>
+                  data-feather=settings></i> <span>Settings</span> </a><a href="{% url 'account_logout' %}"
+                class=dropdown-item><i data-feather=log-out></i>
                 <span>Logout</span></a>
             </div>
           </li>
