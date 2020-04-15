@@ -1,2 +1,328 @@
 {% extends 'partials/_layout.html' %}
 {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "partials/_head.html" %}
+
+<title>Profile :: Bible Lover</title>
+
+{% block body %}
+
+<body>
+  <section class="pt-5 bg-section-secondary">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="row align-items-center">
+            <div class="col-auto"><img alt="Profile Picture" src="../../assets/img/theme/light/person-auth.jpg"
+                class="avatar avatar-xl rounded-circle"></div>
+            <div class="col ml-n3 ml-md-n2">
+              <h2 class="mb-0"><b>{{ request.user.get_full_name|default:request.user }}</b></h2><span
+                class="text-muted d-block">Media Team</span>
+            </div>
+          </div>
+          <div class="mt-4">
+            <ul class="nav nav-tabs overflow-x">
+              <li class="nav-item"><a href="profile.html" class="nav-link active">Profile</a></li>
+              <li class="nav-item"><a href="settings.html" class="nav-link">Settings</a></li>
+              <li class="nav-item"><a href="users.html" class="nav-link">Friends</a></li>
+              <li class="nav-item"><a href="notifications.html" class="nav-link">Notifications</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="slice slice-sm bg-section-secondary">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="mb-4">
+            <div class="row align-items-center mb-3">
+              <div class="col">
+                <h6 class="mb-0">New friends</h6>
+              </div>
+            </div>
+            <div class="row mx-n2">
+              <div class="col-auto text-center mb-3 px-2"><img alt="Image placeholder"
+                  src="../../assets/img/theme/light/person-auth.jpg" class="avatar rounded-circle"> <a href="#"
+                  class="d-block text-xs mt-1 stretched-link text-muted">{{ request.user.first_name }}</a></div>
+              <div class="col-auto text-center mb-3 px-2"><img alt="Image placeholder"
+                  src="../../assets/img/theme/light/person-3.jpg" class="avatar rounded-circle"> <a href="#"
+                  class="d-block text-xs mt-1 stretched-link text-muted">{{ request.user.first_name }}</a></div>
+              <div class="col-auto text-center mb-3 px-2"><img alt="Image placeholder"
+                  src="../../assets/img/theme/light/person-4.jpg" class="avatar rounded-circle"> <a href="#"
+                  class="d-block text-xs mt-1 stretched-link text-muted">{{ request.user.first_name }}</a></div>
+              <div class="col-auto text-center mb-3 px-2"><img alt="Image placeholder"
+                  src="../../assets/img/theme/light/person-2.jpg" class="avatar rounded-circle"> <a href="#"
+                  class="d-block text-xs mt-1 stretched-link text-muted">{{ request.user.first_name }}</a></div>
+              <div class="col-auto text-center mb-3 px-2"><img alt="Image placeholder"
+                  src="../../assets/img/theme/light/person-3.jpg" class="avatar rounded-circle"> <a href="#"
+                  class="d-block text-xs mt-1 stretched-link text-muted">{{ request.user.first_name }}</a></div>
+              <div class="col-auto text-center mb-3 px-2"><img alt="Image placeholder"
+                  src="../../assets/img/theme/light/person-4.jpg" class="avatar rounded-circle"> <a href="#"
+                  class="d-block text-xs mt-1 stretched-link text-muted">{{ request.user.first_name }}</a></div>
+              <div class="col-auto text-center mb-3 px-2"><img alt="Image placeholder"
+                  src="../../assets/img/theme/light/person-2.jpg" class="avatar rounded-circle"> <a href="#"
+                  class="d-block text-xs mt-1 stretched-link text-muted">{{ request.user.first_name }}</a></div>
+              <div class="col-auto text-center mb-3 px-2"><img alt="Image placeholder"
+                  src="../../assets/img/theme/light/person-3.jpg" class="avatar rounded-circle"> <a href="#"
+                  class="d-block text-xs mt-1 stretched-link text-muted">{{ request.user.first_name }}</a></div>
+              <div class="col-auto text-center mb-3 px-2"><img alt="Image placeholder"
+                  src="../../assets/img/theme/light/person-4.jpg" class="avatar rounded-circle"> <a href="#"
+                  class="d-block text-xs mt-1 stretched-link text-muted">{{ request.user.first_name }}</a></div>
+              <div class="col-auto text-center mb-3 px-2"><img alt="Image placeholder"
+                  src="../../assets/img/theme/light/person-4.jpg" class="avatar rounded-circle"> <a href="#"
+                  class="d-block text-xs mt-1 stretched-link text-muted">{{ request.user.first_name }}</a></div>
+            </div>
+          </div>
+          <div>
+            <div class="row align-items-center mb-3">
+              <div class="col">
+                <h6 class="mb-0">Quick stats</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-6">
+                <div class="card card-fluid">
+                  <div class="card-header">
+                    <div class="row align-items-center">
+                      <div class="col-auto"><a href="#" class="avatar rounded-circle"><img alt="Profile Picture"
+                            src="../../assets/img/theme/light/person-auth.jpg"></a></div>
+                      <div class="col ml-md-n2"><a href="#!"
+                          class="d-block h6 mb-0">{{ request.user.get_full_name|default:request.user }}</a> <small
+                          class="d-block text-muted">Media Team</small></div>
+                      <div class="col-auto"><button type="button"
+                          class="btn btn-xs btn-primary btn-icon rounded-pill"><span class="btn-inner--icon"><svg
+                              xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" class="feather feather-edit-2">
+                              <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path>
+                            </svg></span> <span class="btn-inner--text">Edit</span></button></div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-4 text-center"><span class="h5 mb-0">86</span> <span
+                          class="d-block text-sm">Posts</span></div>
+                      <div class="col-4 text-center"><span class="h5 mb-0">8</span> <span class="d-block text-sm">Books
+                          Read</span></div>
+                      <div class="col-4 text-center"><span class="h5 mb-0">250</span> <span
+                          class="d-block text-sm">Friends</span></div>
+                    </div>
+                  </div>
+                  <div class="card-footer py-2">
+                    <div class="row align-items-center">
+                      <div class="col-6"><button type="button"
+                          class="btn btn-sm px-0 font-weight-bold btn-link text-primary btn-icon">Message</button></div>
+                      <div class="col-6 text-right"><button type="button"
+                          class="btn btn-xs btn-secondary rounded-pill">Follow</button></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="card card-fluid">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col">
+                        <h6 class="text-sm mb-0"><i class="fab fa-facebook mr-2"></i>Facebook</h6>
+                      </div>
+                      <div class="col-auto"><span class="text-sm">taiwo.kareem</span></div>
+                    </div>
+                    <hr class="my-3">
+                    <div class="row align-items-center">
+                      <div class="col">
+                        <h6 class="text-sm mb-0"><i class="fab fa-instagram mr-2"></i>Instagram</h6>
+                      </div>
+                      <div class="col-auto"><a href="#" class="text-sm">Connect</a></div>
+                    </div>
+                    <hr class="my-3">
+                    <div class="row align-items-center">
+                      <div class="col">
+                        <h6 class="text-sm mb-0"><i class="fab fa-twitter mr-2"></i>Twitter</h6>
+                      </div>
+                      <div class="col-auto"><span class="text-sm">@taiwokareem</span></div>
+                    </div>
+                    <hr class="my-3">
+                    <div class="row align-items-center">
+                      <div class="col">
+                        <h6 class="text-sm mb-0"><i class="fab fa-linkedin mr-2"></i>LinkedIn</h6>
+                      </div>
+                      <div class="col-auto"><span class="text-sm">taiwokareem</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-4">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <h6>Messages</h6>
+                </div>
+                <div class="list-group list-group-flush"><a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex align-items-center" data-toggle="tooltip" data-placement="right"
+                      data-title="2 hrs ago" data-original-title="" title="">
+                      <div><img alt="Image placeholder" src="../../assets/img/theme/light/person-1.jpg"
+                          class="avatar rounded-circle"></div>
+                      <div class="flex-fill ml-3">
+                        <div class="h6 text-sm mb-0">{{ user.get_full_name }} <small class="float-right text-muted">2
+                            hrs
+                            ago</small></div>
+                        <p class="text-sm lh-140 mb-0">Some quick example text to build on the card title.</p>
+                      </div>
+                    </div>
+                  </a><a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex align-items-center" data-toggle="tooltip" data-placement="right"
+                      data-title="2 hrs ago" data-original-title="" title="">
+                      <div><img alt="Image placeholder" src="../../assets/img/theme/light/person-2.jpg"
+                          class="avatar rounded-circle"></div>
+                      <div class="flex-fill ml-3">
+                        <div class="h6 text-sm mb-0">{{ user.get_full_name }} <small class="float-right text-muted">2
+                            hrs
+                            ago</small></div>
+                        <p class="text-sm lh-140 mb-0">Some quick example text to build on the card title.</p>
+                      </div>
+                    </div>
+                  </a><a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex align-items-center" data-toggle="tooltip" data-placement="right"
+                      data-title="2 hrs ago" data-original-title="" title="">
+                      <div><img alt="Image placeholder" src="../../assets/img/theme/light/person-3.jpg"
+                          class="avatar rounded-circle"></div>
+                      <div class="flex-fill ml-3">
+                        <div class="h6 text-sm mb-0">{{ user.get_full_name }} <small class="float-right text-muted">2
+                            hrs
+                            ago</small></div>
+                        <p class="text-sm lh-140 mb-0">Some quick example text to build on the card title.</p>
+                      </div>
+                    </div>
+                  </a><a href="#" class="list-group-item list-group-item-action">
+                    <div class="d-flex align-items-center" data-toggle="tooltip" data-placement="right"
+                      data-title="2 hrs ago" data-original-title="" title="">
+                      <div><img alt="Image placeholder" src="../../assets/img/theme/light/person-4.jpg"
+                          class="avatar rounded-circle"></div>
+                      <div class="flex-fill ml-3">
+                        <div class="h6 text-sm mb-0">{{ user.get_full_name }} <small class="float-right text-muted">2
+                            hrs
+                            ago</small></div>
+                        <p class="text-sm lh-140 mb-0">Some quick example text to build on the card title.</p>
+                      </div>
+                    </div>
+                  </a></div>
+                <div class="card-footer py-3 text-center border-0 position-relative"><a href="#"
+                    class="text-xs ls-1 text-uppercase font-weight-bold stretched-link">See all</a></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-header">
+                  <h6>Alerts</h6>
+                </div>
+                <div class="list-group list-group-flush"><a href="#"
+                    class="list-group-item list-group-item-action border-0 py-2">
+                    <div class="d-flex">
+                      <div><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="feather feather-bell mr-3">
+                          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg></div>
+                      <div>
+                        <div class="text-sm lh-150">Mail sent to <span
+                            class="text-dark font-weight-bold">{{ user.get_full_name }}</span></div>
+                      </div>
+                    </div>
+                  </a><a href="#" class="list-group-item list-group-item-action border-0 py-2">
+                    <div class="d-flex">
+                      <div><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="feather feather-thumbs-up mr-3">
+                          <path
+                            d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
+                          </path>
+                        </svg></div>
+                      <div>
+                        <div class="text-sm lh-150">You liked a comment from <span
+                            class="text-dark font-weight-bold">{{ user.get_full_name }}</span></div>
+                      </div>
+                    </div>
+                  </a><a href="#" class="list-group-item list-group-item-action border-0 py-2">
+                    <div class="d-flex">
+                      <div><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="feather feather-thumbs-up mr-3">
+                          <path
+                            d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3">
+                          </path>
+                        </svg></div>
+                      <div>
+                        <div class="text-sm lh-150">New likes from <span
+                            class="text-dark font-weight-bold">{{ user.get_full_name }}</span></div>
+                      </div>
+                    </div>
+                  </a><a href="#" class="list-group-item list-group-item-action border-0 py-2">
+                    <div class="d-flex">
+                      <div><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="feather feather-bell mr-3">
+                          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg></div>
+                      <div>
+                        <div class="text-sm lh-150">You are now in team with <span
+                            class="text-dark font-weight-bold">{{ user.get_full_name }}</span></div>
+                      </div>
+                    </div>
+                  </a><a href="#" class="list-group-item list-group-item-action border-0 py-2">
+                    <div class="d-flex">
+                      <div><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"
+                          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="feather feather-message-square mr-3">
+                          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg></div>
+                      <div>
+                        <div class="text-sm lh-150">Mail sent to <span
+                            class="text-dark font-weight-bold">{{ user.get_full_name }}</span></div>
+                      </div>
+                    </div>
+                  </a></div>
+                <div class="card-footer py-3 text-center mt-3 position-relative"><a href="#"
+                    class="text-xs ls-1 text-uppercase font-weight-bold stretched-link">See all</a></div>
+              </div>
+              <div class="card mb-0">
+                <div class="card-header">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div><span class="h6">Reminder</span></div>
+                    <div class="text-right"><span class="h6 font-weight-light text-muted">{% now "jS F\,\ Y" %}</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body py-3">
+                  <div class="d-flex align-items-center">
+                    <div class="">
+                      <div class="icon icon-shape bg-warning"><i class="fas fa-calendar-day text-white"></i></div>
+                    </div>
+                    <div class="pl-3">
+                      <h6 class="text-warning mb-0">Read John 3:16</h6>
+                    </div>
+                    <div class="ml-auto text-right"><a href="#" class="text-warning text-sm text-underline--dashed">See
+                        all reminders</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+{% endblock body %}
+
+{% include "partials/_script.html" %}
+
+</html>
