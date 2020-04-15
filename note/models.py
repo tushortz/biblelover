@@ -17,3 +17,6 @@ class Note(models.Model):
     
     def __str__(self):
         return self.title
+
+    def verse_to_str(self):
+        return ", ".join([str(verse) for verse in self.verses.all() ])
