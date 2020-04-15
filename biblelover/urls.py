@@ -20,3 +20,4 @@ urlpatterns = debug_url_pattern + [
     re_path('assets/(?P<path>.*)$', serve,
             {'document_root': settings.STATIC_ROOT}),
 ]
+

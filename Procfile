@@ -1,2 +1,2 @@
 web: gunicorn biblelover.wsgi --preload --log-file -
-worker: gunicorn biblelover.wsgi process_tasks
+worker: python manage.py process_tasks

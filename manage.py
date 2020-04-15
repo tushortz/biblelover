@@ -2,10 +2,15 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from biblelover.settings.base_setting import *
+
+SETTING_FILE = 'biblelover.development_settings'
+
+if os.environ.get("DEPLOYMENT_STAGE", ""):
+    SETTING_FILE = 'biblelover.production_settings'
+
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'biblelover.development_settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', SETTING_FILE)
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
