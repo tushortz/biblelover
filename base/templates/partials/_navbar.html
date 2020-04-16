@@ -92,7 +92,7 @@
             <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow p-3">
               <h6 class="dropdown-header px-0 mb-2 text-primary">{{ request.user.first_name }}</h6><a
                 href="{% url 'base:profile' %}" class=dropdown-item><i data-feather=user></i> <span>My profile</span>
-              </a><a href=../../pages/account/billing.html class=dropdown-item><i data-feather=credit-card></i>
+              </a><a href="{% url 'base:friends' %}" class=dropdown-item><i data-feather=users></i>
                 <span>Friends</span> </a><a href=../../pages/boards/overview.html class=dropdown-item><i
                   data-feather=activity></i> <span>Dashboard</span></a>
               <div class=dropdown-divider></div><a href="{% url 'base:settings' %}" class=dropdown-item><i
