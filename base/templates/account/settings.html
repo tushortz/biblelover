@@ -23,8 +23,8 @@
           <ul class="nav nav-tabs overflow-x">
             <li class="nav-item"><a href="{% url 'base:profile' %}" class="nav-link">Profile</a></li>
             <li class="nav-item"><a href="{% url 'base:settings' %}" class="nav-link active">Settings</a></li>
-            <li class="nav-item"><a href="users.html" class="nav-link">Friends</a></li>
-            <li class="nav-item"><a href="notifications.html" class="nav-link">Notifications</a></li>
+            <li class="nav-item"><a href="{% url 'base:friends' %}" class="nav-link">Friends</a></li>
+            <li class="nav-item"><a href="{% url 'base:notifications' %}" class="nav-link">Notifications</a></li>
           </ul>
         </div>
       </div>

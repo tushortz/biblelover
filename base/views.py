@@ -48,3 +48,25 @@ def settings(request):
     }
 
     return render(request, "account/settings.html", context)
+
+
+@login_required
+def friends(request):
+    user = request.user
+
+    context = {
+        "user": user
+    }
+
+    return render(request, "account/friends.html", context)
+
+
+@login_required
+def notifications(request):
+    user = request.user
+
+    context = {
+        "user": user
+    }
+
+    return render(request, "account/notifications.html", context)
