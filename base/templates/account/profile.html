@@ -11,30 +11,28 @@
 {% block body %}
 
 <body>
-  <section class="pt-5 bg-section-secondary">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-9">
-          <div class="row align-items-center">
-            <div class="col-auto"><img alt="Profile Picture" src="../../assets/img/theme/light/person-auth.jpg"
-                class="avatar avatar-xl rounded-circle"></div>
-            <div class="col ml-n3 ml-md-n2">
-              <h2 class="mb-0"><b>{{ request.user.get_full_name|default:request.user }}</b></h2><span
-                class="text-muted d-block">Media Team</span>
-            </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="row align-items-center">
+          <div class="col-auto"><img alt="Profile Picture" src="../../assets/img/theme/light/person-auth.jpg"
+              class="avatar avatar-xl rounded-circle"></div>
+          <div class="col ml-n3 ml-md-n2">
+            <h2 class="mb-0"><b>{{ request.user.get_full_name|default:request.user }}</b></h2><span
+              class="text-muted d-block">Media Team</span>
           </div>
-          <div class="mt-4">
-            <ul class="nav nav-tabs overflow-x">
-              <li class="nav-item"><a href="profile.html" class="nav-link active">Profile</a></li>
-              <li class="nav-item"><a href="settings.html" class="nav-link">Settings</a></li>
-              <li class="nav-item"><a href="users.html" class="nav-link">Friends</a></li>
-              <li class="nav-item"><a href="notifications.html" class="nav-link">Notifications</a></li>
-            </ul>
-          </div>
+        </div>
+        <div class="mt-4">
+          <ul class="nav nav-tabs overflow-x">
+            <li class="nav-item"><a href="{% url 'base:profile' %}" class="nav-link active">Profile</a></li>
+            <li class="nav-item"><a href="{% url 'base:settings' %}" class="nav-link">Settings</a></li>
+            <li class="nav-item"><a href="users.html" class="nav-link">Friends</a></li>
+            <li class="nav-item"><a href="notifications.html" class="nav-link">Notifications</a></li>
+          </ul>
         </div>
       </div>
     </div>
-  </section>
+  </div>
   <section class="slice slice-sm bg-section-secondary">
     <div class="container">
       <div class="row justify-content-center">
