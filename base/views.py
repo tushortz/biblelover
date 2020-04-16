@@ -59,3 +59,14 @@ def friends(request):
     }
 
     return render(request, "account/friends.html", context)
+
+
+@login_required
+def notifications(request):
+    user = request.user
+
+    context = {
+        "user": user
+    }
+
+    return render(request, "account/notifications.html", context)

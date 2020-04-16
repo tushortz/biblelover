@@ -1,0 +1,84 @@
+{% extends 'partials/_layout.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% include "partials/_head.html" %}
+
+<title>Notifications :: Bible Lover</title>
+
+{% block body %}
+
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <div class="row align-items-center">
+          <div class="col"><span class="surtitle">Your account</span>
+            <h1 class="h2 mb-0">Notifications</h1>
+          </div>
+        </div>
+        <div class="mt-4">
+          <ul class="nav nav-tabs overflow-x">
+            <li class="nav-item"><a href="{% url 'base:profile' %}" class="nav-link">Profile</a></li>
+            <li class="nav-item"><a href="{% url 'base:settings' %}" class="nav-link">Settings</a></li>
+            <li class="nav-item"><a href="{% url 'base:friends' %}" class="nav-link">Friends</a></li>
+            <li class="nav-item"><a href="{% url 'base:notifications' %}" class="nav-link active">Notifications</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slice slice-sm bg-section-secondary">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <h5 class="mb-3">User notifications</h5>
+          <div class="card">
+            <div class="list-group list-group-flush">
+              <div class="list-group-item d-flex w-100 justify-content-between">
+                <div>
+                  <h6 class="font-weight-light mb-1">Verse of the Day</h6><span
+                    class="text-sm text-muted">You will receive daily verse of the day alerts.</span>
+                </div>
+                <div>
+                  <div class="custom-control custom-switch"><input type="checkbox" class="custom-control-input"
+                      id="shop-notification-1" checked="checked"> <label class="custom-control-label"
+                      for="shop-notification-1"></label></div>
+                </div>
+              </div>
+              <div class="list-group-item d-flex w-100 justify-content-between">
+                <div>
+                  <h6 class="font-weight-light mb-1">New friend request</h6><span class="text-sm text-muted">You
+                    will receive an alert when you get a new friend request.</span>
+                </div>
+                <div>
+                  <div class="custom-control custom-switch"><input type="checkbox" class="custom-control-input"
+                      id="shop-notification-2"> <label class="custom-control-label" for="shop-notification-2"></label>
+                  </div>
+                </div>
+              </div>
+              <div class="list-group-item d-flex w-100 justify-content-between">
+                <div>
+                  <h6 class="font-weight-light mb-1">New message</h6><span
+                    class="text-sm text-muted">You will receive an alert when you get a new message.</span>
+                </div>
+                <div>
+                  <div class="custom-control custom-switch"><input type="checkbox" class="custom-control-input"
+                      id="shop-notification-3" checked="checked"> <label class="custom-control-label"
+                      for="shop-notification-3"></label></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock body %}
+
+{% include "partials/_script.html" %}
+
+</html>

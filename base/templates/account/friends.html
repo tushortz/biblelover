@@ -6,7 +6,7 @@
 
 {% include "partials/_head.html" %}
 
-<title>Settings :: Bible Lover</title>
+<title>Friends :: Bible Lover</title>
 
 {% block body %}
 
@@ -24,7 +24,7 @@
             <li class="nav-item"><a href="{% url 'base:profile' %}" class="nav-link">Profile</a></li>
             <li class="nav-item"><a href="{% url 'base:settings' %}" class="nav-link">Settings</a></li>
             <li class="nav-item"><a href="{% url 'base:friends' %}" class="nav-link active">Friends</a></li>
-            <li class="nav-item"><a href="notifications.html" class="nav-link">Notifications</a></li>
+            <li class="nav-item"><a href="{% url 'base:notifications' %}" class="nav-link">Notifications</a></li>
           </ul>
         </div>
       </div>
