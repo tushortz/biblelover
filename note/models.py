@@ -1,5 +1,6 @@
 from django.db import models
 import uuid
+from bible.helpers import verse_helper
 
 class Note(models.Model):
     title = models.CharField(max_length=50)
@@ -18,5 +19,5 @@ class Note(models.Model):
     def __str__(self):
         return self.title
 
-    def verse_to_str(self):
-        return ", ".join([str(verse) for verse in self.verses.all() ])
+    def verses_to_text(self):
+        return verse_helper.verses_to_text(self.verses.all())
