@@ -1,7 +1,48 @@
 {% extends "partials/_layout.html" %}
-
 {% block title %} My notes :: {% endblock title %}
 
 {% block body %}
+<section class="slice slice-sm bg-section-secondary">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
 
+
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h2>Notes <span class="badge badge-circle badge-info text-md-center"> {{ notes|length }}</span></h2>
+              </div>
+              <div class="list-group list-group-flush">
+                {% for note in notes %}
+                <a href="{% url 'note:show' note.uuid %}" class="list-group-item list-group-item-action">
+                  <div class="d-flex align-items-center" data-toggle="tooltip" data-placement="right"
+                    data-title="2 hrs ago" data-original-title="{{ note.updated_on|timesince }} ago" title="{{ note.updated_on|timesince }} ago">
+                    <div><img alt="Image placeholder" src="../../assets/img/theme/light/person-1.jpg"
+                        class="avatar rounded-circle"></div>
+                    <div class="flex-fill ml-3">
+                      <div class="h6 text-sm mb-0"> <small class="float-right text-muted">{{ note.updated_on }}</small></div>
+                      <h5 class="text-md-left lh-140 mb-0">
+                        {% if note.public %}
+                          <span class="fa fa-globe" data-toggle="tooltip" data-title="public">
+                        {% else %}
+                        <span class="fa fa-lock" data-toggle="tooltip" data-title="private">
+                        {% endif %}&nbsp;&nbsp;
+                          </span>{{ note.title }}</h5>
+                      <p class="text-capitalize text-sm">{{ note.verses_to_text }}</p>
+                    </div>
+                  </div>
+                </a>
+                {% endfor %}
+              </div>
+              <div class="card-footer py-3 text-center border-0 position-relative"><a href="#"
+                  class="text-xs ls-1 text-uppercase font-weight-bold stretched-link">See all</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock body %}

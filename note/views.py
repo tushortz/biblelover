@@ -15,7 +15,7 @@ def index(request):
     chapter = data.get("chapter", 1)
 
     notes = Note.objects.filter(author_id=request.user.id)
-
+    
     if book and chapter:
         verses = Bible.objects.filter(
             book__iexact=book, chapter=chapter)
@@ -26,7 +26,8 @@ def index(request):
     context = {
         "notes": notes
     }
-    return render(request, 'note/index.html')
+    
+    return render(request, 'note/index.html', context)
 
 
 @login_required
