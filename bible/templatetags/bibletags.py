@@ -1,4 +1,10 @@
-def verses_to_text(verses):
+from django import template
+
+register = template.Library()
+
+
+@register.filter(name='urlify_verse')
+def urlify_verse(verses):
     data = {}
 
     for v in verses:
@@ -14,13 +20,14 @@ def verses_to_text(verses):
 
     books = []
     text = ""
+    
     for book, key in data.items():
         for chapter, verse in sorted(key.items()):
             if book in books:
                 book = ","
             else:
                 books.append(book)
-
+            
             text += (f"{book} {(chapter)}:{','.join(sorted(verse))}")
         text += ", "
 
