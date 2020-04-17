@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    old_books = Bible.objects.filter(category="old").order_by('category').values('book').distinct()
-    new_books = Bible.objects.filter(category="new").order_by('category').values('book').distinct()
+    old_books = Bible.objects.filter(category="old", chapter=1, verse=1).order_by('id').values('book')
+    new_books = Bible.objects.filter(category="new", chapter=1, verse=1).order_by('id').values('book')
 
     context = {
         "old_books": old_books,
